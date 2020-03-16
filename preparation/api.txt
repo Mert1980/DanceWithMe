@@ -1,0 +1,56 @@
+POST /api/users : create a new user
+  
+ - save user profile to database
+ - send welcome e-mail
+ - generate auth token
+ - send user and token to front-end
+
+ POST /users/login : login the user
+ - find the user by its email and password
+ - generate auth token
+ - send user and token to front-end
+    
+POST /api/users/logout : log out the user
+
+  * if user logs out, the auth token will be removed from tokens array
+  - filter the tokens array and remove the auth token 
+  - save the user 
+  - send response to front-end
+
+POST /api/users/logoutAll : log out user from all devices
+
+  * This route deletes all the tokens, if a user logs out from a device it logs out 
+    from all the devices that the user previously logged in
+  - assign user tokens to an empty array
+  - save the user 
+  - send response to front-end
+  
+GET /api/users/me : get user info from database
+
+  * This function is going to run if the user is actually authenticated
+  - auth middleware will find the user
+  - send the user info to the front-end
+
+PATCH /api/users/me : update the user profile
+
+  - define which user fields will be updated
+  - check the validation of the update operation
+  - update the user profile
+  - save the user
+  - send the user info to the front-end
+
+DELETE api/users/me : delete user from database
+
+    - remove user from database
+    - send cancelation email to the user
+    - send the user info to the front-end
+
+POST api/users/me/photo : upload profile photo
+
+    - resize profile photo
+    - save profile photo to database
+    
+GET api/users/:id/photo : get profile photo from database
+
+    - find the use photo by user's id
+    - send the photo to front-end
