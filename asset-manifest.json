@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/DanceWithMe/static/css/main.711391f2.chunk.css",
+    "main.js": "/DanceWithMe/static/js/main.f4a55291.chunk.js",
+    "main.js.map": "/DanceWithMe/static/js/main.f4a55291.chunk.js.map",
+    "runtime-main.js": "/DanceWithMe/static/js/runtime-main.ab1e9e36.js",
+    "runtime-main.js.map": "/DanceWithMe/static/js/runtime-main.ab1e9e36.js.map",
+    "static/js/2.c5be568c.chunk.js": "/DanceWithMe/static/js/2.c5be568c.chunk.js",
+    "static/js/2.c5be568c.chunk.js.map": "/DanceWithMe/static/js/2.c5be568c.chunk.js.map",
+    "index.html": "/DanceWithMe/index.html",
+    "precache-manifest.1d99d0311df12f952f2ee4b8ce62f85b.js": "/DanceWithMe/precache-manifest.1d99d0311df12f952f2ee4b8ce62f85b.js",
+    "service-worker.js": "/DanceWithMe/service-worker.js",
+    "static/css/main.711391f2.chunk.css.map": "/DanceWithMe/static/css/main.711391f2.chunk.css.map",
+    "static/js/2.c5be568c.chunk.js.LICENSE.txt": "/DanceWithMe/static/js/2.c5be568c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ab1e9e36.js",
+    "static/js/2.c5be568c.chunk.js",
+    "static/css/main.711391f2.chunk.css",
+    "static/js/main.f4a55291.chunk.js"
+  ]
+}
