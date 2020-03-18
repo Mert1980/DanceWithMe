@@ -1,7 +1,10 @@
 const express = require("express");
 
+// require('./db/mongoose');
+
 const app = express();
-const port = process.env.PORT || 5000
+const port = process.env.PORT
+console.log(port)
 
 app.use(express.json());
 
