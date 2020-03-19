@@ -1,6 +1,7 @@
 import React from 'react';
 //import './App.css';
 import Login from './Components/Login/Login'
+import SingUp from './Components/Sing-Up/SignUp'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         </p>
       </header>
       <Login/>
+      <SingUp/>
     </div>
   );
 }
