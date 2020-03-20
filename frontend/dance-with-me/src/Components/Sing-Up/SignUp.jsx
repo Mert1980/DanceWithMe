@@ -52,7 +52,7 @@ function SignUp() {
     <div>
       {singedUp ? (
         //we need frontend route here
-        <Redirect to="__________" />
+        <Redirect to="/users" />
       ) : (<div>
         <Button variant="primary" onClick={handleShow}>
           Sign Up

@@ -14,7 +14,7 @@ function Login() {
 
   function submitForm() {
     axios
-      .post('http://localhost:3000/users/login', { email, password })
+      .post('http://localhost:5000/users/login', { email, password })
       .then(e => {
         if (e.data.token) {
           localStorage.setItem('token', e.data.token);
@@ -37,7 +37,7 @@ function Login() {
   };
   return (
     <>
-    {loggedIn ? (<Redirect to="_________" />): // we need frontend route here
+    {loggedIn ? (<Redirect to="/login" />): // we need frontend route here
     <div>
       <Button variant="primary" onClick={handleShow}>
         Login
