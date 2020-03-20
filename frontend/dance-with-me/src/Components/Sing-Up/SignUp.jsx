@@ -8,7 +8,7 @@ function SignUp() {
   const [show, setShow] = useState(false);
   
   const [name, setName] = useState('');
-  const [surName, setSurName] = useState('');
+  const [surname, setSurName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [singedUp, setSingedUp] = useState(false);
@@ -32,13 +32,14 @@ function SignUp() {
 
    function submitForm() {
      axios
-       .post('http://localhost:3000/api/users', {name, surName, email, password })
+       .post('http://localhost:5000/users', {name, surname, email, password })
        .then(e => {
+         console.log(e.data)
          if (e.data.token) {
            localStorage.setItem('token', e.data.token);
            localStorage.setItem('ID', e.data.user.id);
            setSingedUp(true);
-           //console.log(e.data.token);
+           console.log(e.data.token);
          } else {
            setSingedUp(false);
          }
@@ -78,7 +79,7 @@ function SignUp() {
             type="text"
             placeholder="Please Enter Your Surname"
             onChange={handleSurNameChange}
-            value={surName} />
+            value={surname} />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
               <Form.Group controlId="formBasicEmail">
