@@ -14,12 +14,10 @@ function Login() {
 
   function submitForm() {
     axios
-    //we need backend route here
-      .post('__________', { email, password })
+      .post('http://localhost:3000/users/login', { email, password })
       .then(e => {
         if (e.data.token) {
           localStorage.setItem('token', e.data.token);
-          localStorage.setItem('username', e.data.user.username);
           localStorage.setItem('ID', e.data.user.id);
           setLoggedIn(true);
           //console.log(e.data.token);

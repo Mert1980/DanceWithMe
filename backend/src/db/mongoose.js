@@ -1,8 +1,5 @@
 const mongoose = require("mongoose");
 
-// const path = require('path');
-// require('dotenv').config({path: path.resolve(process.cwd(), 'config', '.env'), debug: true});
-
 // const uri = `mongodb+srv://HYF:${process.env.MONGODB_PSWD}@cluster0-by0o2.mongodb.net/test?retryWrites=true&w=majority`
 
 mongoose.connect('mongodb://127.0.0.1:27017/DanceApp', {
