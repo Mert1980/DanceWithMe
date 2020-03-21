@@ -1,21 +1,14 @@
-import React from 'react';
-//import './App.css';
-import Login from './components/Login/Login'
-import SignUp from './components/Signup/Signup'
-import { Router, Redirect } from 'react-router';
+import React, { Component } from 'react'
+import MyRoutes from './routers/myroutes'
+import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          DANCE WITH ME
-        </p>
-      </header>
-
-      <Login/>
-      <SignUp/>
-    </div>
+    <React.Fragment>
+      <div className="App">
+        <MyRoutes />
+      </div>
+    </React.Fragment>
   );
 }
 

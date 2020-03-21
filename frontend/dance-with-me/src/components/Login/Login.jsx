@@ -33,7 +33,7 @@ function Login() {
   }
   return (
     <>
-    {loggedIn ? (<Redirect to="/login" />): // we need frontend route here
+    {loggedIn ? (<Redirect to="/DanceWithMe" />): // we need frontend route here
     <div>
       <Button variant="primary" onClick={handleShow}>
         Login
