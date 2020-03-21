@@ -2,27 +2,28 @@ import React, { useState} from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import axios from 'axios';
 import { Redirect } from 'react-router';
+import useInput from './use-input'
 
 function Login() {
   const [show, setShow] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
 
+  const email = useInput('');
+  const password = useInput('');
+  
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   function submitForm() {
     axios
-      .post('http://localhost:5000/users/login', { email, password })
+      .post('http://localhost:5000/users/login', { email: email.value, password:password.value})
       .then(e => {
-        console.log(email, password)
-        if (e.data.token) {
+       if (e.data.token) {
+         alert("You have successfully logged in!")
           localStorage.setItem('token', e.data.token);
-          localStorage.setItem('ID', e.data.user.id);
+          localStorage.setItem('ID', e.data.user._id);
           setLoggedIn(true);
-          //console.log(e.data.token);
-        } else {
+          } else {
           setLoggedIn(false);
         }
       })
@@ -30,12 +31,6 @@ function Login() {
         console.log(err);
       });
   }
-  const handleEmailChange = e => {
-    setEmail(e.target.value);
-  };
-  const handlePasswordChange = p => {
-    setPassword(p.target.value);
-  };
   return (
     <>
     {loggedIn ? (<Redirect to="/login" />): // we need frontend route here
@@ -52,14 +47,22 @@ function Login() {
                 }}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" required onChange={handleEmailChange} value={email} />
+              <Form.Control 
+                type="email" 
+                placeholder="Enter email" 
+                {...email}
+              />
               <Form.Text className="text-muted">
-                   We’ll never share your email with anyone else.
+                Your email will be kept in confidence.
               </Form.Text>
             </Form.Group>
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" required onChange={handlePasswordChange} value={password} />
+              <Form.Control
+                type="password" 
+                placeholder="Password" 
+                {...password}
+              />
               </Form.Group>
           <Button variant="primary" type="submit"> Submit
           </Button>

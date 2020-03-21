@@ -2,42 +2,27 @@ import React, { useState } from 'react';
 import { Modal, Button, Form, } from 'react-bootstrap';
 import axios from 'axios';
 import { Redirect } from 'react-router';
+import useInput from "./use-input";
 
 
 function SignUp() {
   const [show, setShow] = useState(false);
-  
-  const [name, setName] = useState('');
-  const [surname, setSurName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [signedUp, setSignedUp] = useState(false);
-
+  const name = useInput('');
+  const surname = useInput('');
+  const email = useInput('');
+  const password = useInput('');
+    
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleNameChange = e => {
-    setName(e.target.value);
-  };
-  const handleSurNameChange = e => {
-    setSurName(e.target.value);
-  };
-  const handleEmailChange = e => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = e => {
-    setPassword(e.target.value);
-  };
-
-   function submitForm() {
+  function submitForm() {
      axios
-       .post('http://localhost:5000/users', {name, surname, email, password })
+       .post('http://localhost:5000/users', {name:name.value, surname:surname.value, email:email.value, password: password.value })
        .then(e => {
-         console.log(e.data)
          if (e.data.token) {
            localStorage.setItem('token', e.data.token);
-           localStorage.setItem('ID', e.data.user.id);
+           localStorage.setItem('ID', e.data.user._id);
            setSignedUp(true);
            console.log(e.data.token);
          } else {
@@ -68,8 +53,8 @@ function SignUp() {
                       required
                       type="text"
                       placeholder="Please Enter Your Name"
-                      onChange={handleNameChange}
-                      value={name} />
+                      {...name}
+                    />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         <Form.Group controlId="validationCustom02">
@@ -78,8 +63,8 @@ function SignUp() {
             required
             type="text"
             placeholder="Please Enter Your Surname"
-            onChange={handleSurNameChange}
-            value={surname} />
+            {...surname}
+            />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
               <Form.Group controlId="formBasicEmail">
@@ -88,8 +73,8 @@ function SignUp() {
                 type="email" 
                 placeholder="Enter email" 
                 required
-                onChange={handleEmailChange}
-                value={email} />
+                {...email}
+                />
                 <Form.Text className="text-muted">
                   We’ll never share your email with anyone else.
               </Form.Text>
@@ -100,8 +85,8 @@ function SignUp() {
                 type="password" 
                 placeholder="Password"
                 required
-                onChange={handlePasswordChange}
-                value={password} />
+                {...password}
+                />
               </Form.Group>
               <Button variant="primary" type="submit"> Submit
           </Button>
