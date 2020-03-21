@@ -11,7 +11,7 @@ function SignUp() {
   const [surname, setSurName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [singedUp, setSingedUp] = useState(false);
+  const [signedUp, setSignedUp] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -38,10 +38,10 @@ function SignUp() {
          if (e.data.token) {
            localStorage.setItem('token', e.data.token);
            localStorage.setItem('ID', e.data.user.id);
-           setSingedUp(true);
+           setSignedUp(true);
            console.log(e.data.token);
          } else {
-           setSingedUp(false);
+           setSignedUp(false);
          }
        })
        .catch(err => {
@@ -50,9 +50,9 @@ function SignUp() {
    }
   return (
     <div>
-      {singedUp ? (
+      {signedUp ? (
         //we need frontend route here
-        <Redirect to="__________" />
+        <Redirect to="/users" />
       ) : (<div>
         <Button variant="primary" onClick={handleShow}>
           Sign Up
