@@ -24,8 +24,7 @@ function SignUp() {
            localStorage.setItem('token', e.data.token);
            localStorage.setItem('ID', e.data.user._id);
            setSignedUp(true);
-           console.log(e.data.token);
-         } else {
+        } else {
            setSignedUp(false);
          }
        })
@@ -37,7 +36,7 @@ function SignUp() {
     <div>
       {signedUp ? (
         //we need frontend route here
-        <Redirect to="/users" />
+        <Redirect to="/DanceWithMe" />
       ) : (<div>
         <Button variant="primary" onClick={handleShow}>
           Sign Up
