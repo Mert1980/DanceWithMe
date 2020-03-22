@@ -1,15 +1,14 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import MyRoutes from './routers/myroutes'
+import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          DANCEWITHME APP
-        </p>
-      </header>
-    </div>
+    <React.Fragment>
+      <div className="App">
+        <MyRoutes />
+      </div>
+    </React.Fragment>
   );
 }
 
