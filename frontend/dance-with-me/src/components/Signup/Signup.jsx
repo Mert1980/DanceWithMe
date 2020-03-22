@@ -38,7 +38,7 @@ function SignUp() {
         //we need frontend route here
         <Redirect to="/DanceWithMe" />
       ) : (<div>
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="outline-primary" onClick={handleShow}>
           Sign Up
       </Button>
         <Modal show={show} onHide={handleClose} >
