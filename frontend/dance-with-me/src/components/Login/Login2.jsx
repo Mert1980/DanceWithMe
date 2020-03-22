@@ -35,8 +35,8 @@ function Login() {
     <>
     {loggedIn ? (<Redirect to="/DanceWithMe" />): // we need frontend route here
     <div>
-      <Button variant="outline-primary" onClick={handleShow}>
-        Login
+      <Button variant="primary" onClick={handleShow}>
+        Find Your Matches
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton />
