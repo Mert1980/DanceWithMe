@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="co">
+
+        <div class="container my-5">
+            <div class="row" style="height:600px">
+
+                <div class="col-sm-3 mb-3">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="images\img_avatar1.png" alt="Card image"
+                            style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">John Doe</h4>
+                            <p class="card-text">Some example text some example text. John Doe is an architect and
+                                engineer</p>
+                            <a href="#" class="btn btn-primary">See Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 ">
+                    <h5 class="text-center py-3 bg-danger text-light border rounded font-weight-bold">Upcoming Events
+                    </h5>
+                    <div class="container">
+                        <div class="row mt-1">
+                            <div class="col-sm-9">
+                                <h6 class="font-weight-bold">Event Name</h6>
+                                <small>Event detail</small>
+                                <p>Event Location</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-outline-success mt-2"><small>See
+                                        More</small></button>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="container">
+                        <div class="row mt-1">
+                            <div class="col-sm-9">
+                                <h6 class="font-weight-bold">Event Name</h6>
+                                <small>Event detail</small>
+                                <p>Event Location</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-outline-success mt-2"><small>See
+                                        More</small></button>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="container">
+                        <div class="row mt-1">
+                            <div class="col-sm-9">
+                                <h6 class="font-weight-bold">Event Name</h6>
+                                <small>Event detail</small>
+                                <p>Event Location</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-outline-success mt-2 mb-3"><small>See
+                                        More</small></button>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <button type="button" class="btn  border rounded border-primary text-primary btn-block mb-3">Wiew
+                        More</button>
+
+                </div>
+                <div class="col-sm-4 ">
+                    <h5 class="text-center py-3 border border-danger text-danger rounded font-weight-bold">Suggestions
+                    </h5>
+                    <div id="accordion">
+
+                        <div class="card">
+                          <div class="card-header">
+                            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                                Suggested Matches
+                            </a>
+                          </div>
+                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row mt-1">
+                                        <div class="col-sm-3"><img src="images\img_avatar1.png" class="img-fluid" alt="e"></div>
+                                        <div class="col-sm-6">
+                                            <h6 class="font-weight-light">Matched Person Name</h6>
+                                            <small>Person interest</small>
+                                            <p class="lead">Location</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <button type="button" class="btn btn-outline-success mt-2"><small>+</small></button>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <div class="card">
+                          <div class="card-header">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                                Recieved Connection Requests
+                            </a>
+                          </div>
+                          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row mt-1">
+                                        <div class="col-sm-3"><img src="images\img_avatar1.png" class="img-fluid" alt="e"></div>
+                                        <div class="col-sm-5">
+                                            <h6 class="font-weight-light">Person Name</h6>
+                                            <small>Person interest</small>
+                                            <p class="lead">Location</p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="btn-group mt-3">
+                                                <button type="button" class="btn btn-outline-danger mr-1">&#10003;</button>
+                                                <button type="button" class="btn btn-outline-success">&#88;</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <div class="card">
+                          <div class="card-header">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                                My Pending Invitations
+                            </a>
+                          </div>
+                          <div id="collapseThree" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row mt-1">
+                                        <div class="col-sm-3"><img src="images\img_avatar1.png" class="img-fluid" alt="e"></div>
+                                        <div class="col-sm-5">
+                                            <h6 class="font-weight-light">Person Name</h6>
+                                            <small>Person interest</small>
+                                            <p class="lead">Location</p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="btn-group mt-3">
+                                                <button type="button" class="btn btn-outline-success">&#88;</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                      </div>
+                    
+   
+
+
+                    <button type="button" class="btn btn-primary btn-block mb-3">See More</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="text-center text-info border rounded  mb-2">See the Top Profiles</h3>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="images\img_avatar1.png" alt="Card image"
+                                style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">Some example text</p>
+                                <div class="btn-group-vertical">
+                                    <button type="button" class="btn btn-outline-danger">Send invitations</button>
+                                    <button type="button" class="btn btn-outline-success">See profile</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="images\img_avatar1.png" alt="Card image"
+                                style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">Some example text</p>
+                                <div class="btn-group-vertical">
+                                    <button type="button" class="btn btn-outline-danger">Send invitations</button>
+                                    <button type="button" class="btn btn-outline-success">See profile</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="images\img_avatar1.png" alt="Card image"
+                                style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">Some example text</p>
+                                <div class="btn-group-vertical">
+                                    <button type="button" class="btn btn-outline-danger">Send invitations</button>
+                                    <button type="button" class="btn btn-outline-success">See profile</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h5 class="text-center py-3  text-info border rounded font-weight-bold">Recieved Connection Requests 
+                </h5>
+                <div class="container">
+                    <div class="row mt-1">
+                        <div class="col-sm-3"><img src="images\img_avatar1.png" class="img-fluid" alt="e"></div>
+                        <div class="col-sm-5">
+                            <h6 class="font-weight-light">Person Name</h6>
+                            <small>Person interest</small>
+                            <p class="lead">Location</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="btn-group mt-3">
+                                <button type="button" class="btn btn-outline-danger mr-1">+</button>
+                                <button type="button" class="btn btn-outline-success">-</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="container">
+                    <div class="row mt-1">
+                        <div class="col-sm-3"><img src="images\img_avatar1.png" class="img-fluid" alt="e"></div>
+                        <div class="col-sm-5">
+                            <h6 class="font-weight-light">Person Name</h6>
+                            <small>Person interest</small>
+                            <p class="lead">Location</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="btn-group mt-3">
+                                <button type="button" class="btn btn-outline-danger mr-1">+</button>
+                                <button type="button" class="btn btn-outline-success">-</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="container">
+                    <div class="row mt-1">
+                        <div class="col-sm-3"><img src="images\img_avatar1.png" class="img-fluid" alt="e"></div>
+                        <div class="col-sm-5">
+                            <h6 class="font-weight-light">Person Name</h6>
+                            <small>Person interest</small>
+                            <p class="lead">Location</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="btn-group mt-3">
+                                <button type="button" class="btn btn-outline-danger mr-1">+</button>
+                                <button type="button" class="btn btn-outline-success">-</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+</body>
+
+</html>
