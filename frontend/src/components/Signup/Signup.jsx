@@ -18,7 +18,7 @@ function SignUp() {
 
   function submitForm() {
      axios
-       .post('http://localhost:5000/users', {name:name.value, surname:surname.value, email:email.value, password: password.value })
+       .post('http://localhost:5000/api/users', {name:name.value, surname:surname.value, email:email.value, password: password.value })
        .then(e => {
          if (e.data.token) {
            localStorage.setItem('token', e.data.token);

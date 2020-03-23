@@ -1,0 +1,21 @@
+{
+  "name": "cooool",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
+    "dev-api": "nodemon backend/dev.js",
+    "dev-client": "cd frontend && npm run start",
+    "start": "node index.js",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  }
+}

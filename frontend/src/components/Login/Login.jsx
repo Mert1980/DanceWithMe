@@ -16,7 +16,7 @@ function Login() {
 
   function submitForm() {
     axios
-      .post('http://localhost:5000/users/login', { email: email.value, password:password.value})
+      .post('http://localhost:5000/api/users/login', { email: email.value, password:password.value})
       .then(e => {
        if (e.data.token) {
          alert("You have successfully logged in!")
