@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router';
 import useInput from './use-input'
 
-function Login() {
+function Login(props) {
   const [show, setShow] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -35,8 +35,8 @@ function Login() {
     <>
     {loggedIn ? (<Redirect to="/DanceWithMe" />): // we need frontend route here
     <div>
-      <Button variant="outline-primary" onClick={handleShow}>
-        Login
+      <Button variant={props.color} onClick={handleShow}>
+        {props.text}
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton />

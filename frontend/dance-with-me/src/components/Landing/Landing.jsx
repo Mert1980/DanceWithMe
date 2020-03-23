@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {Navbar,Nav,Form,FormControl,Button,Carousel,Container,Row,Col,Jumbotron} from 'react-bootstrap'
 import SignUp from "../Signup/Signup";
 import Login from "../Login/Login";
-import Login2 from "../Login/Login2";
 import dance1 from '../Landing/dance1.jpg';
 import dance2 from '../Landing/dance2.jpg';
 import dancing from '../Landing/dancing.png';
@@ -30,7 +29,7 @@ function Landing() {
               <Nav.Link href="#about">About</Nav.Link>
             </Nav>
             <Form inline>
-              <Login/>
+              <Login text="Login" color="outline-primary"/>
               <SignUp/>
             </Form>
           </Navbar>
@@ -42,7 +41,7 @@ function Landing() {
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3><Login2/></h3>
+      <h3><Login text="Find your matches" color="primary"/></h3>
       <p className="text-danger font-weight-bold">In Belgium there are many people looking for a dance partner</p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -55,7 +54,7 @@ function Landing() {
     />
 
     <Carousel.Caption>
-      <h3><Login2/></h3>
+      <h3><Login text="Find your matches" color="primary"/></h3>
       <p className="text-dark pl-5 text-uppercase font-weight-bold">Be active together with DanceWithMe</p>
     </Carousel.Caption>
   </Carousel.Item>
