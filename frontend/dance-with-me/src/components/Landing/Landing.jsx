@@ -54,7 +54,7 @@ function Landing() {
     />
 
     <Carousel.Caption>
-      <h3><Login text="Find your matches" color="primary"/></h3>
+      <h3><Login text="Find Your Matches" color="primary"/></h3>
       <p className="text-dark pl-5 text-uppercase font-weight-bold">Be active together with DanceWithMe</p>
     </Carousel.Caption>
   </Carousel.Item>
