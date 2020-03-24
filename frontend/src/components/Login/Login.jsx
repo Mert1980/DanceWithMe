@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router';
 import useInput from './use-input'
 
-function Login() {
+function Login(props) {
   const [show, setShow] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -16,7 +16,7 @@ function Login() {
 
   function submitForm() {
     axios
-      .post('http://localhost:5000/users/login', { email: email.value, password:password.value})
+      .post('http://localhost:5000/api/users/login', { email: email.value, password:password.value})
       .then(e => {
        if (e.data.token) {
          alert("You have successfully logged in!")
@@ -35,8 +35,8 @@ function Login() {
     <>
     {loggedIn ? (<Redirect to="/DanceWithMe" />): // we need frontend route here
     <div>
-      <Button variant="primary" onClick={handleShow}>
-        Login
+      <Button variant={props.color} onClick={handleShow}>
+        {props.text}
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton />
