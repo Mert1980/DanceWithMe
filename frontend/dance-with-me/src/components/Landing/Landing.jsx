@@ -55,7 +55,8 @@ function Landing() {
 
     <Carousel.Caption>
       <h3><Login text="Find Your Matches" color="primary"/></h3>
-      <p className="text-dark pl-5 text-uppercase font-weight-bold">Be active together with DanceWithMe</p>
+      <p class="pl-5 text-uppercase font-weight-bold"><span class="text-light">Be- </span ><span class="text-dark">active together with DanceWithMe</span></p>
+      {/* <p className="text-dark pl-5 text-uppercase font-weight-bold">Be active together with DanceWithMe</p> */}
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
