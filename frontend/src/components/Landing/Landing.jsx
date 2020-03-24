@@ -41,7 +41,7 @@ function Landing() {
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3><Login text="Find your matches" color="primary"/></h3>
+      <h3><Login text="Find Your Matches" color="primary"/></h3>
       <p className="text-danger font-weight-bold">In Belgium there are many people looking for a dance partner</p>
     </Carousel.Caption>
   </Carousel.Item>
