@@ -37,6 +37,50 @@ const userSchema = new mongoose.Schema({
       }
     }
   },
+  gender: {
+    type: String,
+    required:true
+  },
+  age: {
+    type: Number,
+    required:true
+  },
+  weight:{
+    type: Number,
+    required:true
+  },
+  height:{
+    type: Number,
+    required:true
+  },
+  location: {
+    type: String,
+    required: true
+  },
+  dance_preference: {
+    type: [],
+    required: true
+  },
+  partner_gender: {
+    type: String,
+    required: true
+  },
+  partner_age: {
+    type: Number,
+    required: true
+  },
+  partner_weight: {
+    type: Number,
+    required: true
+  },
+  partner_height: {
+    type: Number,
+    required: true
+  },
+  preferred_dance_type:{
+    type: [],
+    required: true
+  },
   tokens: [{
     token: {
       type: String,
