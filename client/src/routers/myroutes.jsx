@@ -18,7 +18,7 @@ export default class MyRoutes extends React.Component {
       <div>
         <Router>
           <Switch>
-            <Route exact path="/DanceWithMe" component={Landing} />
+            <Route exact path="/" component={Landing} />
             <Route exact path="/users" component={Signup} />
             <Route exact path="/login" component={Login} />
           </Switch>

@@ -25,4 +25,17 @@ router.post("/users/login", async (req, res) => {
   }
 });
 
+router.get("/users/", async (req, res) => {
+   try {
+     var result = await User.find().exec();
+     res.send(result);
+   } catch (error) {
+     res.status(500).send(error);
+   }
+})
+
+router.get("/test/", async(req, res) => {
+    res.status(200).send({message: 'it works'});
+});
+
 module.exports = router;
