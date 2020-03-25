@@ -18,7 +18,7 @@ function SignUp() {
 
   function submitForm() {
      axios
-       .post('http://localhost:5000/users', {name:name.value, surname:surname.value, email:email.value, password: password.value })
+       .post('http://localhost:5000/api/users', {name:name.value, surname:surname.value, email:email.value, password: password.value })
        .then(e => {
          if (e.data.token) {
            localStorage.setItem('token', e.data.token);
@@ -38,7 +38,7 @@ function SignUp() {
         //we need frontend route here
         <Redirect to="/DanceWithMe" />
       ) : (<div>
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="outline-primary" onClick={handleShow}>
           Sign Up
       </Button>
         <Modal show={show} onHide={handleClose} >
