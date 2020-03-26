@@ -21,7 +21,7 @@ $ heroku config:set MONGOLAB_URI="mongodb+srv://matt:matt@cluster0-s639o.mongodb
 $ heroku apps:open hyf-group6-dancewithme
 ```
 
-App will be available at: https://hyf-group6-dancewithme.herokuapp.com/
+App will be available at: https://hyf-class6-dancewithme.herokuapp.com/
 
 
 
