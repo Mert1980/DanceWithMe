@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
-    "dev-api": "nodemon backend/dev.js",
-    "dev-client": "cd frontend && npm run start",
+    "dev-api": "nodemon api/dev.js",
+    "dev-client": "cd client && npm run start",
     "start": "node index.js",
-    "heroku-postbuild": "cd frontend && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "license": "MIT",
   "dependencies": {

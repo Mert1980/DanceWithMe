@@ -1,0 +1,28 @@
+
+
+
+# Push app to Heroku
+$ git push -f heroku infra/setup-heroku:master  # With 'infra/setup-heroku' to be replaced by the name of your current branch
+
+# Setup MongoDB
+Setup Database in https://cloud.mongodb.com/
+
+1. Create an account in `https://cloud.mongodb.com/`
+- sign for a free (student) cluster
+- create a MongoDB user
+
+2. Connect remote Mongo DB to Heroku app
+```
+$ heroku config:set MONGOLAB_URI="mongodb+srv://matt:matt@cluster0-s639o.mongodb.net/DanceApp"
+```
+
+# Open the app
+```
+$ heroku apps:open hyf-group6-dancewithme
+```
+
+App will be available at: https://hyf-group6-dancewithme.herokuapp.com/
+
+
+
+
