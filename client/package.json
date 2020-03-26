@@ -1,6 +1,5 @@
 {
-  "homepage": "http://Mert1980.github.io/DanceWithMe",
-  "name": "dance-with-me",
+  "name": "phht",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,11 +15,10 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test  --collectCoverage=true",
+    "test:watch": "react-scripts test --watch  --collectCoverage=true",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,7 +36,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "gh-pages": "^2.2.0"
-  }
+  "proxy": "http://localhost:5000"
 }
