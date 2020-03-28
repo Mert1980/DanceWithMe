@@ -36,7 +36,7 @@ function SignUp() {
     <div>
       {signedUp ? (
         //we need frontend route here
-        <Redirect to="/DanceWithMe" />
+        <Redirect to="/me" />
       ) : (<div>
         <Button variant="outline-primary" onClick={handleShow}>
           Sign Up

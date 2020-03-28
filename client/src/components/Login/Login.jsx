@@ -33,7 +33,7 @@ function Login(props) {
   }
   return (
     <>
-    {loggedIn ? (<Redirect to="/DanceWithMe" />): // we need frontend route here
+    {loggedIn ? (<Redirect to="/me" />): // we need frontend route here
     <div>
       <Button variant={props.color} onClick={handleShow}>
         {props.text}

@@ -37,6 +37,18 @@ const userSchema = new mongoose.Schema({
       }
     }
   },
+  location: {
+    type: String,
+    required: true
+  },
+  years_of_experience: {
+    type: Number,
+    required:true
+  },
+  more_about_you: {
+    type: String,
+    required: false
+  },
   gender: {
     type: String,
     required:true
@@ -52,14 +64,6 @@ const userSchema = new mongoose.Schema({
   height:{
     type: Number,
     required:true
-  },
-  location: {
-    type: String,
-    required: true
-  },
-  dance_preference: {
-    type: [],
-    required: true
   },
   partner_gender: {
     type: String,
@@ -77,7 +81,7 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  preferred_dance_type:{
+  dance_preference:{
     type: [],
     required: true
   },
@@ -89,12 +93,22 @@ const userSchema = new mongoose.Schema({
   }],
  });
 
+ userSchema.methods.toJSON = function() {
+  const user = this
+  const userObject = user.toObject() 
+  delete userObject.password
+  delete userObject.tokens
+  delete userObject.avatar
+  return userObject
+ }
+
 userSchema.methods.generateAuthToken = async function() {
   const user = this;
   const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET);//JWT_SECRET is the secret code to generate the token
   // {} --> payload, "" --> our secret
   // convert object ID to string
   user.tokens = user.tokens.concat({token});
+  // console.log(user.tokens)
   await user.save();
   return token;
 };
