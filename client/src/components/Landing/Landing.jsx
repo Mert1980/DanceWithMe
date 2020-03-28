@@ -55,7 +55,7 @@ function Landing() {
 
     <Carousel.Caption>
       <h3><Login text="Find Your Matches" color="primary"/></h3>
-      <p class="pl-5 text-uppercase font-weight-bold"><span class="text-light">Be- </span ><span class="text-dark">active together with DanceWithMe</span></p>
+      <p className="pl-5 text-uppercase font-weight-bold"><span className="text-light">Be- </span ><span className="text-dark">active together with DanceWithMe</span></p>
       {/* <p className="text-dark pl-5 text-uppercase font-weight-bold">Be active together with DanceWithMe</p> */}
     </Carousel.Caption>
   </Carousel.Item>
@@ -99,24 +99,24 @@ function Landing() {
 </Container>
 
 
-<footer class="border rounded container pt-4">
+<footer className="border rounded container pt-4">
 
   
-  <div class="container">
+  <div className="container">
 
     
-    <ul class="text-center py-2">
-      <li class="list-inline-item">
-        <h5 class="pt-1 text-info">Register for free</h5>
+    <ul className="text-center py-2">
+      <li className="list-inline-item">
+        <h5 className="pt-1 text-info">Register for free</h5>
       </li>
-      <li class="list-inline-item">
-        <a href="#!" class="btn btn-outline-white btn-rounded"><SignUp/></a>
+      <li className="list-inline-item">
+        <a href="#!" className="btn btn-outline-white btn-rounded"><SignUp/></a>
       </li>
     </ul>
 
   </div>
   
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+  <div className="footer-copyright text-center py-3">© 2020 Copyright:
     <a href="">DanceWithMe</a>
   </div>
 
