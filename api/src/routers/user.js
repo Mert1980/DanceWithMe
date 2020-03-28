@@ -1,5 +1,6 @@
 const express = require("express");
 const User = require("../models/user");
+const auth = require("../middleware/authentication");
 const router = new express.Router();
 const sendWelcomeEmail = require('../emails/account')
 
@@ -25,17 +26,26 @@ router.post("/users/login", async (req, res) => {
   }
 });
 
-router.get("/users/", async (req, res) => {
-   try {
-     var result = await User.find().exec();
-     res.send(result);
-   } catch (error) {
-     res.status(500).send(error);
-   }
+// if user logs out, the auth token will be removed from tokens array
+router.post("/users/logout", auth, async(req, res) => {
+  try {
+    req.user.tokens = req.user.tokens.filter(token => {
+      return token.token !== req.token
+    })
+    await req.user.save()
+    res.send()
+  } catch (e) {
+    res.status(500).send()
+  } 
 })
 
-router.get("/test/", async(req, res) => {
-    res.status(200).send({message: 'it works'});
-});
+router.get("/users/me", auth, async(req, res)=>{
+  try{
+    res.send(req.user)
+  } catch (e) {
+    res.status(500).send()
+  }
+})
+
 
 module.exports = router;
