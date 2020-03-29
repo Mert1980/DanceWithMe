@@ -22,6 +22,7 @@ function Login(props) {
          alert("You have successfully logged in!")
           localStorage.setItem('token', e.data.token);
           localStorage.setItem('ID', e.data.user._id);
+          // axios.defaults.headers.common["Authorization"] = e.data.token;
           setLoggedIn(true);
           } else {
           setLoggedIn(false);

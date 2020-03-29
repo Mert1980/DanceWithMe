@@ -71,15 +71,15 @@ const userSchema = new mongoose.Schema({
   },
   partner_age: {
     type: Number,
-    required: true
+    required: false
   },
   partner_weight: {
     type: Number,
-    required: true
+    required: false
   },
   partner_height: {
     type: Number,
-    required: true
+    required: false
   },
   dance_preference:{
     type: [],
