@@ -6,9 +6,10 @@ import { Button } from "react-bootstrap";
 function Logout() {
   const [loggedOut, setLoggedOut] = useState(false);
   function handleClick() {
+    console.log(localStorage.getItem("token"))
     axios
       .post(
-        "https://hyf-class6-dancewithme.herokuapp.com/api/users/logout", 
+        "http://localhost:3000/api/users/logout", 
         { headers: {"Authorization" : `Bearer ${localStorage.getItem("token")}`} }
       )
       .then(e => {
@@ -20,9 +21,9 @@ function Logout() {
           setLoggedOut(false);
         }
       })
-      .catch(err => {
-        console.log(err);
-      });
+      // .catch(err => {
+      //   console.log(err);
+      // });
   }
   return (
     <>
