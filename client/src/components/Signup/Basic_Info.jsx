@@ -1,12 +1,8 @@
 import React from "react";
 import useInput from "./use-input";
 
-function Basic_Info() {
-  const name = useInput("");
-  const surname = useInput("");
-  const email = useInput("");
-  const password = useInput("");
-
+function Basic_Info({name, surname, email, password}) {
+  
   return (
     <div>
       <div className="form-group mt-4">
@@ -18,7 +14,9 @@ function Basic_Info() {
           placeholder="Enter first name"
           name="fname"
           required
-          {...name}
+          value={name.value} 
+          onChange={name.onChange}
+          // {...name}
         ></input>
         <div className="valid-feedback">Valid.</div>
         <div className="invalid-feedback">Please fill out this field.</div>
@@ -32,7 +30,9 @@ function Basic_Info() {
           placeholder="Enter last name"
           name="lname"
           required
-          {...surname}
+          value={surname.value} 
+          onChange={surname.onChange}
+          // {...surname}
         />
         <div className="valid-feedback">Valid.</div>
         <div className="invalid-feedback">Please fill out this field.</div>
@@ -45,7 +45,9 @@ function Basic_Info() {
           aria-describedby="emailHelp"
           placeholder="Enter email"
           required
-          {...email}
+          value={email.value} 
+          onChange={email.onChange}
+          // {...email}
         />
         <div className="valid-feedback">Valid.</div>
         <div className="invalid-feedback">Please fill out this field.</div>
@@ -57,7 +59,9 @@ function Basic_Info() {
           className="form-control  "
           type="password"
           required
-          {...password}
+          value={password.value} 
+          onChange={password.onChange}
+          // {...password}
           name="up"
           placeholder="Password"
         />

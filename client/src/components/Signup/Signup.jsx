@@ -8,21 +8,29 @@ import More_About_You from "./More_About_You";
 import User_Physical_Info from "./User_Physical_Info";
 import Dance_Preference from "./Dance_Preference";
 import Partner_Physical_Info from "./Partner_Physical_Info";
+import useInput from "./use-input";
 
 function SignUp() {
   const [show, setShow] = useState(false);
   const [signedUp, setSignedUp] = useState(false);
-
+  
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const name = useInput("");
+  const surname = useInput("");
+  const email = useInput("");
+  const password = useInput("");
+  // console.log(name)
 
   function submitForm() {
     axios
       .post("http://localhost:5000/api/users", {
-        // name: name.value,
-        // surname: surname.value,
-        // email: email.value,
-        // password: password.value,
+       
+        name: name.value,
+        surname: surname.value,
+        email: email.value,
+        password: password.value
         // location: location.value,
         // years_of_experience: years_of_experience.value,
         // more_about_you: more_about_you.value,
@@ -64,24 +72,26 @@ function SignUp() {
                 onSubmit={e => {
                   e.preventDefault();
                   submitForm();
+                  const data = new FormData(e.target);
+                  console.log(data)
                 }}
                 action="/newaccount"
                 method="post"
                 className="was-validated"
-                onInput='up2.setCustomValidity(up2.value != up.value ? "Passwords do not match." : "")'
+                
               >
-                <Basic_Info />
-                <Location_Experience />
-                <More_About_You />
-                <User_Physical_Info />
+                <Basic_Info name={name} surname={surname} email={email} password={password}/>
+                {/* <Location_Experience /> */}
+                {/* <More_About_You /> */}
+                {/* <User_Physical_Info /> */}
                 <div className="container">
                   <h5 className="text-success mt-5">
                     Your ideal dance partner
                   </h5>
                   <hr />
                   <div className="container border border-top-0 border-info px-5 py-2">
-                    <Partner_Physical_Info />
-                    <Dance_Preference />
+                    {/* <Partner_Physical_Info /> */}
+                    {/* <Dance_Preference /> */}
                   </div>
                 </div>
                 <div className="container my-3">
