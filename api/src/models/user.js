@@ -47,7 +47,7 @@ const userSchema = new mongoose.Schema({
   },
   more_about_you: {
     type: String,
-    required: false
+    required: true
   },
   gender: {
     type: String,
@@ -70,15 +70,15 @@ const userSchema = new mongoose.Schema({
     required: false
   },
   partner_age: {
-    type: Number,
+    type: String,
     required: false
   },
   partner_weight: {
-    type: Number,
+    type: String,
     required: false
   },
   partner_height: {
-    type: Number,
+    type: String,
     required: false
   },
   dance_preference:{

@@ -1,10 +1,7 @@
 import React from "react";
-import useInput from "./use-input";
 
-function User_Physical_Info() {
-  const age = useInput("");
-  const weight = useInput("");
-  const height = useInput("");
+function User_Physical_Info({ handleButtonUser, age, weight, height }) {
+  
   return (
     <div>
       <div className="container">
@@ -15,9 +12,10 @@ function User_Physical_Info() {
           <div className="custom-control custom-radio custom-control-inline w-25">
             <input
               type="radio"
-              className="custom-control-input"
-              id="customRadio"
-              name="example"
+              // className="custom-control-input"
+              name="genderUser"
+              value="male"
+              onChange={handleButtonUser}
             />
             <label className="custom-control-label" for="customRadio">
               Male
@@ -26,9 +24,10 @@ function User_Physical_Info() {
           <div className="custom-control custom-radio custom-control-inline w-25">
             <input
               type="radio"
-              className="custom-control-input"
-              id="customRadio2"
-              name="example"
+              // className="custom-control-input"
+              name="genderUser"
+              value="female"
+              onChange={handleButtonUser}
             />
             <label className="custom-control-label" for="customRadio2">
               Female
@@ -88,3 +87,4 @@ function User_Physical_Info() {
   );
 }
 export default User_Physical_Info;
+

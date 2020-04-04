@@ -1,6 +1,11 @@
 import React from "react";
 
-function Partner_Physical_Info() {
+function Partner_Physical_Info({
+  handleButtonPartner,
+  partner_age,
+  partner_weight,
+  partner_height
+}) {
   return (
     <div>
       <div>
@@ -9,9 +14,10 @@ function Partner_Physical_Info() {
       <div class="custom-control custom-radio custom-control-inline w-25">
         <input
           type="radio"
-          className="custom-control-input"
-          id="customRadio3"
-          name="example2"
+          // className="custom-control-input"
+          name="genderPartner"
+          value="male"
+          onChange={handleButtonPartner}
         />
         <label className="custom-control-label" for="customRadio3">
           Male
@@ -20,9 +26,10 @@ function Partner_Physical_Info() {
       <div className="custom-control custom-radio custom-control-inline w-25">
         <input
           type="radio"
-          className="custom-control-input"
-          id="customRadio4"
-          name="example2"
+          // className="custom-control-input"
+          name="genderPartner"
+          value="female"
+          onChange={handleButtonPartner}
         />
         <label className="custom-control-label" for="customRadio4">
           Female
@@ -31,7 +38,12 @@ function Partner_Physical_Info() {
       <div className="row mt-4">
         <div className="col-sm-4">
           {" "}
-          <select name="ages" className="custom-select my-2 ">
+          <select
+            {...partner_age}
+            id="ages"
+            name="ages"
+            className="custom-select my-2 "
+          >
             <option selected>Select Age Range</option>
             <option value="18-25">18-25</option>
             <option value="25-35">25-35</option>
@@ -43,7 +55,12 @@ function Partner_Physical_Info() {
         </div>
         <div className="col-sm-4">
           {" "}
-          <select className="heights" className="custom-select my-2 ">
+          <select
+            {...partner_height}
+            id="heights"
+            name="heights"
+            className="custom-select my-2 "
+          >
             <option selected>Select Height Range</option>
             <option value="140-150">140-150</option>
             <option value="150-160">150-160</option>
@@ -56,7 +73,12 @@ function Partner_Physical_Info() {
         </div>
         <div className="col-sm-4">
           {" "}
-          <select name="weights" className="custom-select my-2">
+          <select
+            {...partner_weight}
+            id="weights"
+            name="weights"
+            className="custom-select my-2"
+          >
             <option selected>Select Weight Range</option>
             <option value="50-60">50-60</option>
             <option value="60-70">60-70</option>

@@ -1,17 +1,21 @@
 import React from "react";
 import useInput from "./use-input";
 
-function More_About_You() {
-  const more_about_you = useInput("");
+function More_About_You({more_about_you}) {
+  
   return (
     <div>
       <h6 className="mt-4">More about you</h6>
       <div className="form-group">
         <textarea
-          className="form-control  "
+          className="form-control"
           rows="3"
           placeholder="Dance interest, dance background and goals..."
-          {...more_about_you}
+          id="text"
+          name="text"
+          value={more_about_you.value} 
+          onChange={more_about_you.onChange}
+          // {...more_about_you}
         ></textarea>
       </div>
     </div>
