@@ -39,11 +39,11 @@ const userSchema = new mongoose.Schema({
   },
   location: {
     type: String,
-    required: true
+    required: false
   },
   years_of_experience: {
     type: Number,
-    required:true
+    required:false
   },
   more_about_you: {
     type: String,
@@ -51,39 +51,39 @@ const userSchema = new mongoose.Schema({
   },
   gender: {
     type: String,
-    required:true
+    required:false
   },
   age: {
     type: Number,
-    required:true
+    required:false
   },
   weight:{
     type: Number,
-    required:true
+    required:false
   },
   height:{
     type: Number,
-    required:true
+    required:false
   },
   partner_gender: {
     type: String,
-    required: true
+    required: false
   },
   partner_age: {
     type: Number,
-    required: true
+    required: false
   },
   partner_weight: {
     type: Number,
-    required: true
+    required: false
   },
   partner_height: {
     type: Number,
-    required: true
+    required: false
   },
   dance_preference:{
     type: [],
-    required: true
+    required: false
   },
   tokens: [{
     token: {
