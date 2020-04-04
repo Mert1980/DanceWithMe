@@ -1,11 +1,11 @@
 import React from "react";
 
-function Location_Experience() {
+function Location_Experience({location, years_of_experience}) {
   return (
     <div>
       <div className="row">
         <div className="col-sm-6 my-2">
-          <select name="cities" className="custom-select">
+          <select {...location} id="cities" name="cities" className="custom-select">
             <option selected>Select Your Province</option>
             <option value="Antwerpen">Antwerpen</option>
             <option value="Limburg">Limburg</option>
@@ -20,7 +20,7 @@ function Location_Experience() {
           </select>
         </div>
         <div className="col-sm-6 my-2">
-          <select name="years" className="custom-select">
+          <select {...years_of_experience} id="years" name="years" className="custom-select">
             <option selected>Select Years Experience</option>
             <option value="1">1</option>
             <option value="2">2</option>
