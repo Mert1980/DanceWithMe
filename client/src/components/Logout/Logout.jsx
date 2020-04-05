@@ -11,7 +11,7 @@ function Logout() {
     };
   const bodyParameters = {
      key: "value"
-  };  
+  }; 
 
     axios
       .post(

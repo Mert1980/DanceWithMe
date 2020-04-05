@@ -19,6 +19,7 @@ const auth = async (req, res, next) => {
     }
     req.token = token; // this will be used when the user logs out. We can access this in logout route handler
     req.user = user;
+    console.log(req.user.location)
     next();
   } catch (e) {
     res.status(401).send({ error: "Please authenticate!" });

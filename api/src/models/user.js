@@ -7,12 +7,12 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   surname: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   email: {
     type: String,
@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
       if (!validator.isEmail(value)) {
         throw new Error("Email is invalid!");
       }
-    }
+    },
   },
   password: {
     type: String,
@@ -35,79 +35,81 @@ const userSchema = new mongoose.Schema({
       if (value.toLowerCase().includes("password")) {
         throw new Error('Password can not contain "password"');
       }
-    }
+    },
   },
   location: {
     type: String,
-    required: false
+    required: false,
   },
   years_of_experience: {
     type: Number,
-    required:false
+    required: false,
   },
   more_about_you: {
     type: String,
-    required: true
+    required: true,
   },
   gender: {
     type: String,
-    required:false
+    required: false,
   },
   age: {
     type: Number,
-    required:false
+    required: false,
   },
-  weight:{
+  weight: {
     type: Number,
-    required:false
+    required: false,
   },
-  height:{
+  height: {
     type: Number,
-    required:false
+    required: false,
   },
   partner_gender: {
     type: String,
-    required: false
+    required: false,
   },
   partner_age: {
     type: String,
-    required: false
+    required: false,
   },
   partner_weight: {
     type: String,
-    required: false
+    required: false,
   },
   partner_height: {
     type: String,
-    required: false
+    required: false,
   },
-  dance_preference:{
+  dance_preference: {
     type: [],
-    required: false
+    required: false,
   },
-  tokens: [{
-    token: {
-      type: String,
-      required: true
-    }
-  }],
- });
+  tokens: [
+    {
+      token: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
+});
 
- userSchema.methods.toJSON = function() {
-  const user = this
-  const userObject = user.toObject() 
-  delete userObject.password
-  delete userObject.tokens
-  delete userObject.avatar
-  return userObject
- }
-
-userSchema.methods.generateAuthToken = async function() {
+userSchema.methods.toJSON = function () {
   const user = this;
-  const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET);//JWT_SECRET is the secret code to generate the token
+  const userObject = user.toObject();
+  delete userObject.password;
+  delete userObject.tokens;
+  delete userObject.avatar;
+  return userObject;
+};
+
+userSchema.methods.generateAuthToken = async function () {
+  const user = this;
+  const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET); //JWT_SECRET is the secret code to generate the token
   // {} --> payload, "" --> our secret
   // convert object ID to string
-  user.tokens = user.tokens.concat({token});
+  user.tokens = user.tokens.concat({ token });
   // console.log(user.tokens)
   await user.save();
   return token;
@@ -126,9 +128,20 @@ userSchema.statics.findByCredentials = async (email, password) => {
   return user;
 };
 
+userSchema.statics.findMatchedUsers = async (location) => {
+  const matchedUsers = await User.find(
+    { location: location },
+    { _id: 0, name: 1, dance_preference: 1, location: 1 }
+  );
+  if (!matchedUsers) {
+    throw new Error("Unable to match users!");
+  }
+  return matchedUsers;
+};
+
 // Hash the plain text password before saving
 // Arrow functions don't bind 'this'
-userSchema.pre("save", async function(next) {
+userSchema.pre("save", async function (next) {
   // 'this' gives us access to the individual user that's about to be saved!!!
   const user = this;
 
@@ -145,4 +158,3 @@ userSchema.pre("save", async function(next) {
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;
-

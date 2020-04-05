@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { Button } from "react-bootstrap";
+import ListMatchedUsers from "./ListMatchedUsers"
 
 function MatchUsers () {
     const [clicked, setClicked] = useState(false)
+    const [users, setUsers] = useState([])
     function handleClick() {
         const config = {
            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
@@ -18,7 +20,7 @@ function MatchUsers () {
       config
     )
     .then(e => {
-        console.log(e)
+        setUsers(e.data)
       if (e.status === 200) {
         setClicked(true);
       } else {
@@ -34,7 +36,8 @@ function MatchUsers () {
         </div>
         { clicked &&  
         <div>
-            <h3>Matched-users will be displayed here</h3>
+          <h3>Matched-users</h3>
+          <ListMatchedUsers users={users} />
         </div>
         }
         </> 
