@@ -6,25 +6,29 @@ import { Button } from "react-bootstrap";
 function Logout() {
   const [loggedOut, setLoggedOut] = useState(false);
   function handleClick() {
-    console.log(localStorage.getItem("token"))
+   const config = {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    };
+  const bodyParameters = {
+     key: "value"
+  };  
+
     axios
       .post(
-        "http://localhost:3000/api/users/logout", 
-        { headers: {"Authorization" : `Bearer ${localStorage.getItem("token")}`} }
+        "http://localhost:5000/api/users/logout", 
+        bodyParameters,
+        config
       )
       .then(e => {
           console.log(e)
-        if (e.data.token) {
+        if (e.status === 200) {
           alert("You have successfully logged out!");
           setLoggedOut(true);
         } else {
           setLoggedOut(false);
         }
       })
-      // .catch(err => {
-      //   console.log(err);
-      // });
-  }
+    }
   return (
     <>
       {loggedOut ? (
