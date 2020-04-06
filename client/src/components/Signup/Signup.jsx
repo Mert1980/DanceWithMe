@@ -10,17 +10,15 @@ import Dance_Preference from "./Dance_Preference";
 import Partner_Physical_Info from "./Partner_Physical_Info";
 import useInput from "./use-input";
 
-
 function SignUp() {
   const [show, setShow] = useState(false);
   const [signedUp, setSignedUp] = useState(false);
   const [gender, setGender] = useState("");
   const [partner_gender, setPartnerGender] = useState("");
 
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
   const handleButtonUser = event => {
     const { value } = event.target;
     setGender(value);
@@ -29,6 +27,16 @@ function SignUp() {
   const handleButtonPartner = event => {
     const { value } = event.target;
     setPartnerGender(value);
+  };
+  let checkedDanceTypes = [];
+  
+  const handleCheckBox = event => {
+    const { name, checked } = event.target;
+    if (checked) {
+      checkedDanceTypes.push(name);
+    } else if (!checked) {
+      checkedDanceTypes = checkedDanceTypes.filter(e => e !== name)
+    }
   };
 
   const name = useInput("");
@@ -44,9 +52,7 @@ function SignUp() {
   const partner_height = useInput("");
   const location = useInput("");
   const years_of_experience = useInput("");
-        
-         
-        // dance_preference: dance_preference.value
+ 
   function submitForm() {
     axios
       .post("http://localhost:5000/api/users", {
@@ -64,9 +70,9 @@ function SignUp() {
         partner_weight: partner_weight.value,
         partner_height: partner_height.value,
         gender: gender,
-        partner_gender: partner_gender
-        // partner_gender: partner_gender.value  
-        })
+        partner_gender: partner_gender,
+        dance_preference: checkedDanceTypes
+      })
       .then(e => {
         if (e.data.token) {
           localStorage.setItem("token", e.data.token);
@@ -83,7 +89,7 @@ function SignUp() {
   return (
     <div>
       {signedUp ? (
-        <Redirect to="/login" />
+        <Redirect to="/users/me" />
       ) : (
         <div>
           <Button variant="outline-primary" onClick={handleShow}>
@@ -99,20 +105,37 @@ function SignUp() {
                 action="/newaccount"
                 method="post"
                 className="was-validated"
-                
               >
-                <Basic_Info name={name} surname={surname} email={email} password={password}/>
-                <Location_Experience location={location} years_of_experience={years_of_experience} />
+                <Basic_Info
+                  name={name}
+                  surname={surname}
+                  email={email}
+                  password={password}
+                />
+                <Location_Experience
+                  location={location}
+                  years_of_experience={years_of_experience}
+                />
                 <More_About_You more_about_you={more_about_you} />
-                <User_Physical_Info handleButtonUser={handleButtonUser} age={age} weight={weight} height={height}/>
+                <User_Physical_Info
+                  handleButtonUser={handleButtonUser}
+                  age={age}
+                  weight={weight}
+                  height={height}
+                />
                 <div className="container">
                   <h5 className="text-success mt-5">
                     Your ideal dance partner
                   </h5>
                   <hr />
                   <div className="container border border-top-0 border-info px-5 py-2">
-                    <Partner_Physical_Info handleButtonPartner={handleButtonPartner} partner_age={partner_age} partner_weight={partner_weight} partner_height={partner_height}/>
-                    {/* <Dance_Preference /> */}
+                    <Partner_Physical_Info
+                      handleButtonPartner={handleButtonPartner}
+                      partner_age={partner_age}
+                      partner_weight={partner_weight}
+                      partner_height={partner_height}
+                    />
+                    <Dance_Preference handleCheckBox={handleCheckBox} />
                   </div>
                 </div>
                 <div className="container my-3">

@@ -22,7 +22,7 @@ export default class MyRoutes extends React.Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/users" component={Signup} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/me" component={Profile} />
+            <Route exact path="/users/me" component={Profile} />
           </Switch>
         </Router>
       </div>
