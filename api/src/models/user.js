@@ -110,7 +110,6 @@ userSchema.methods.generateAuthToken = async function () {
   // {} --> payload, "" --> our secret
   // convert object ID to string
   user.tokens = user.tokens.concat({ token });
-  // console.log(user.tokens)
   await user.save();
   return token;
 };
