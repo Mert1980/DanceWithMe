@@ -4,6 +4,14 @@ const auth = require("../middleware/authentication");
 const router = new express.Router();
 const sendWelcomeEmail = require('../emails/account')
 
+/**
+* Just a simple test endpoint to demo how to test with Jest
+* Ref: https://devhints.io/jest
+**/
+router.get('/test', async (req, res) => {
+  res.json({ message: 'pass!' })
+})
+
 router.post("/users", async (req, res) => {
   const user = new User(req.body);
   try {
