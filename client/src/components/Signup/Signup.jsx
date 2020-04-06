@@ -55,7 +55,7 @@ function SignUp() {
  
   function submitForm() {
     axios
-      .post("http://localhost:5000/api/users", {
+      .post("https://hyf-class6-dancewithme.herokuapp.com/api/users", {
         name: name.value,
         surname: surname.value,
         email: email.value,
