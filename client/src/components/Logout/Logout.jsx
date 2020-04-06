@@ -15,7 +15,7 @@ function Logout() {
 
     axios
       .post(
-        "http://localhost:5000/api/users/logout", 
+        "https://hyf-class6-dancewithme.herokuapp.com/api/users/logout", 
         bodyParameters,
         config
       )
