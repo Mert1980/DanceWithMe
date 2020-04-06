@@ -1,18 +1,25 @@
 import React, { Component } from "react";
-import {Navbar,Nav,Form,FormControl,Button,Carousel,Container,Row,Col,Jumbotron} from 'react-bootstrap'
+import {
+  Navbar,
+  Nav,
+  Form,
+  FormControl,
+  Button,
+  Carousel,
+  Container,
+  Row,
+  Col,
+  Jumbotron
+} from "react-bootstrap";
 import SignUp from "../Signup/Signup";
 import Login from "../Login/Login";
-import dance1 from '../Landing/dance1.jpg';
-import dance2 from '../Landing/dance2.jpg';
-import dancing from '../Landing/dancing.png';
-
-
+import dance1 from "../Landing/dance1.jpg";
+import dance2 from "../Landing/dance2.jpg";
+import dancing from "../Landing/dancing.png";
 
 function Landing() {
   return (
-
     <div>
-
         <Navbar fixed="top" bg="light" variant="light">
               <Navbar.Brand href="#home">
             <img
@@ -119,11 +126,7 @@ function Landing() {
   <div className="footer-copyright text-center py-3">© 2020 Copyright:
     <a href="">DanceWithMe</a>
   </div>
-
-
 </footer>
-
-      
     </div>
   );
 }
