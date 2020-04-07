@@ -9,7 +9,7 @@ function UserMatch(props) {
         <div class="card-body">
             <div class="container">
                 <div class="row mt-1">
-                    <div class="col-sm-3"><img src="../../../../public/images/img_avatar1.png" class="img-fluid" alt="e" /></div>
+                    <div class="col-sm-3"><img width="120" height = "120" src="/images/img_avatar1.png" class="img-fluid rounded-circle" alt="e" /></div>
                     <div class="col-sm-6">
                         <h6 class="font-weight-light">{props.item.name}</h6>
                         <small>{interest}</small>
