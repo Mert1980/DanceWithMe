@@ -130,7 +130,7 @@ userSchema.statics.findByCredentials = async (email, password) => {
 userSchema.statics.findMatchedUsers = async (location) => {
   const matchedUsers = await User.find(
     { location: location },
-    { _id: 0, name: 1, dance_preference: 1, location: 1 }
+    { _id: 1, name: 1, email: 1, dance_preference: 1, location: 1 }
   );
   if (!matchedUsers) {
     throw new Error("Unable to match users!");
