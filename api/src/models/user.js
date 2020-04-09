@@ -127,9 +127,29 @@ userSchema.statics.findByCredentials = async (email, password) => {
   return user;
 };
 
-userSchema.statics.findMatchedUsers = async (location) => {
+userSchema.statics.findMatchedUsers = async (
+  location,
+  partner_gender,
+  partner_age,
+  partner_weight,
+  partner_height
+) => {
+  minAge = parseInt(partner_age.split("-")[0]);
+  maxAge = parseInt(partner_age.split("-")[1]);
+  minWeight = parseInt(partner_weight.split("-")[0]);
+  maxWeight = parseInt(partner_weight.split("-")[1]);
+  minHeight = parseInt(partner_height.split("-")[0]);
+  maxHeight = parseInt(partner_height.split("-")[1]);
+
+
   const matchedUsers = await User.find(
-    { location: location },
+    {
+      location: location,
+      gender: partner_gender,
+      age: { $gt: minAge-1, $lt: maxAge+1 },
+      weight: { $gt: minWeight-1, $lt: maxWeight+1 },
+      height: { $gt: minHeight-1, $lt: maxHeight+1 }
+    },
     { _id: 1, name: 1, email: 1, dance_preference: 1, location: 1 }
   );
   if (!matchedUsers) {
