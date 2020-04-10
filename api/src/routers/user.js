@@ -52,7 +52,13 @@ router.post("/users/logout", auth, async (req, res) => {
 
 router.post("/users/me", auth, async (req, res) => {
   try {
-    const matched = await User.findMatchedUsers(req.user.location);
+    const matched = await User.findMatchedUsers(
+      req.user.location, 
+      req.user.partner_gender,
+      req.user.partner_age,
+      req.user.partner_weight,
+      req.user.partner_height
+      );
     res.send(matched);
   } catch (e) {
     res.status(500).send();
