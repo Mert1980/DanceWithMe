@@ -8,34 +8,40 @@ function User_Physical_Info({ handleButtonUser, age, weight, height }) {
         <h5 className="text-success mt-5">Physical Information</h5>
         <hr />
         <div className="container border border-top-0 border-info px-5 py-2">
-          <h6 className="mt-4">Gender</h6>
-          <div className="custom-control custom-radio custom-control-inline w-25">
+          <h6 className="mt-4">Your Gender</h6>
+          <div class="row">
+            <div class="col-sm-6">
             <input
               type="radio"
               // className="custom-control-input"
               name="genderUser"
               value="male"
+              id="male1"
               onChange={handleButtonUser}
             />
-            <label className="custom-control-label" for="customRadio">
-              Male
-            </label>
-          </div>
-          <div className="custom-control custom-radio custom-control-inline w-25">
+            
+            <label for="male1">Male</label>
+           
+            </div>
+            <div class="col-sm-6">
             <input
               type="radio"
               // className="custom-control-input"
               name="genderUser"
               value="female"
+              id="female1"
               onChange={handleButtonUser}
             />
-            <label className="custom-control-label" for="customRadio2">
-              Female
-            </label>
+          
+          <label for="female1">Female</label>
+           
+            </div>
           </div>
+        
+      
 
           <div className="row mt-3 py-4">
-            <div className="col-sm-4">
+            <div className="col-sm-12">
               <div className="form-group">
                 <input
                   type="number"
@@ -50,7 +56,7 @@ function User_Physical_Info({ handleButtonUser, age, weight, height }) {
                 />
               </div>
             </div>
-            <div className="col-sm-4">
+            <div className="col-sm-12">
               <div className="form-group">
                 <input
                   type="number"
@@ -65,7 +71,7 @@ function User_Physical_Info({ handleButtonUser, age, weight, height }) {
                 />
               </div>
             </div>
-            <div className="col-sm-4">
+            <div className="col-sm-12">
               <div className="form-group">
                 <input
                   type="number"
