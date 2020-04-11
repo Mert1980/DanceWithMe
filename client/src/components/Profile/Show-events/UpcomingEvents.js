@@ -6,7 +6,7 @@ class UpcomingEvents extends Component {
   render() {
     return (
       <div>
-        <div className="col-sm-5 ">
+        <div className="col-sm-12">
           <h5 className="text-center py-3 bg-danger text-light border rounded font-weight-bold">
             Upcoming Events
           </h5>
