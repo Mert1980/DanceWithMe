@@ -16,11 +16,11 @@ function User_Physical_Info({ handleButtonUser, age, weight, height }) {
               // className="custom-control-input"
               name="genderUser"
               value="male"
-              id="male"
+              id="male1"
               onChange={handleButtonUser}
             />
             
-            <label for="male">Male</label>
+            <label for="male1">Male</label>
            
             </div>
             <div class="col-sm-6">
@@ -29,11 +29,11 @@ function User_Physical_Info({ handleButtonUser, age, weight, height }) {
               // className="custom-control-input"
               name="genderUser"
               value="female"
-              id="female"
+              id="female1"
               onChange={handleButtonUser}
             />
           
-          <label for="female">Female</label>
+          <label for="female1">Female</label>
            
             </div>
           </div>

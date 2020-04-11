@@ -18,10 +18,10 @@ function Partner_Physical_Info({
           // className="custom-control-input"
           name="genderPartner"
           value="male"
-          id="male"
+          id="male2"
           onChange={handleButtonPartner}
         />
-          <label for="male">Male</label>
+          <label for="male2">Male</label>
         </div>
         <div class="col-sm-6">
         <input
@@ -29,11 +29,11 @@ function Partner_Physical_Info({
           // className="custom-control-input"
           name="genderPartner"
           value="female"
-          id="female"
+          id="female2"
           onChange={handleButtonPartner}
         />
         
-        <label for="female">Female</label>
+        <label for="female2">Female</label>
         </div>
       </div>
    
