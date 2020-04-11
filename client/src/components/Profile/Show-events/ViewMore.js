@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import { Table } from "reactstrap";
 
-// const path = require('path');
-// require('dotenv').config({path: path.resolve(process.cwd(), 'client', '.env.development'), debug: true});
-// require('dotenv').config();
 const url =`https://www.skiddle.com/api/v1/events/search/?api_key=${process.env.REACT_APP_SKIDDLE_API_KEY}&GB&eventcode=THEATRE&order=distance&date=1&limit=20&imagefilter=1&description=1&under18=0`
-
-
 class ViewMore extends Component {
   state = {
     events: [],
