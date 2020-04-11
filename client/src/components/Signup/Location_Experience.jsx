@@ -7,16 +7,15 @@ function Location_Experience({location, years_of_experience}) {
         <div className="col-sm-6 my-2">
           <select {...location} id="cities" name="cities" className="custom-select">
             <option selected>Select Your Province</option>
-            <option value="Antwerpen">Antwerpen</option>
-            <option value="Limburg">Limburg</option>
-            <option value="Oost-Vlaanderen">Oost-Vlaanderen</option>
-            <option value="Vlaams-Brabant">Vlaams-Brabant</option>
-            <option value="West-Vlaanderen">West-Vlaanderen</option>
-            <option value="Henegouwen">Henegouwen</option>
-            <option value="Luik">Luik</option>
-            <option value="Luxemburg">Luxemburg</option>
-            <option value="Namen">Namen</option>
-            <option value="Waals-Brabant">Waals-Brabant</option>
+            <option value="East Midlands">East Midlands</option>
+            <option value="East of England">East of England</option>
+            <option value="London">London</option>
+            <option value="North East">North East</option>
+            <option value="North West">North West</option>
+            <option value="South East">South East</option>
+            <option value="South West">South West</option>
+            <option value="West Midlands">West Midlands</option>
+            <option value="Yorkshire and the Humber">Yorkshire and the Humber</option>
           </select>
         </div>
         <div className="col-sm-6 my-2">
