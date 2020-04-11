@@ -3,7 +3,7 @@ import React, { Component } from "react";
 const path = require('path');
 require('dotenv').config({path: path.resolve(process.cwd(), 'client','.env.development'), debug: true});
 // require('dotenv').config();
-const url = `https://www.skiddle.com/api/v1/events/search/?api_key=${process.env.SKIDDLE_API_KEY}&GB&eventcode=THEATRE&order=distance&date=1&limit=3&imagefilter=1&description=1&under18=0`;
+const url = `https://www.skiddle.com/api/v1/events/search/?api_key=${process.env.REACT_APP_SKIDDLE_API_KEY}&GB&eventcode=THEATRE&order=distance&date=1&limit=3&imagefilter=1&description=1&under18=0`;
 
 console.log(process.env.SKIDDLE_API_KEY)
 
