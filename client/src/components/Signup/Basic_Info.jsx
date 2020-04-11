@@ -63,7 +63,7 @@ function Basic_Info({name, surname, email, password}) {
           onChange={password.onChange}
           // {...password}
           name="up"
-          placeholder="Password"
+          placeholder="Password(at least 7 letters/numbers)"
         />
         <div className="valid-feedback">Valid.</div>
         <div className="invalid-feedback mb-4">Please fill out this field.</div>
