@@ -10,7 +10,7 @@ function Dance_Preference({handleCheckBox}) {
             <label>
            <input 
               type="checkbox"
-              name="americanRhythm"
+              name="American Rhythm"
               onChange={handleCheckBox}
               />
               American Rhythm
@@ -20,7 +20,7 @@ function Dance_Preference({handleCheckBox}) {
         <label>
         <input 
           type="checkbox"
-          name="salsa"
+          name="Salsa"
           onChange={handleCheckBox}
         />
         Salsa
@@ -32,7 +32,7 @@ function Dance_Preference({handleCheckBox}) {
           <label>
         <input 
           type="checkbox"
-          name="latinDance"
+          name="Latin Dance"
           onChange={handleCheckBox}
         />
         Latin Dance
@@ -42,7 +42,7 @@ function Dance_Preference({handleCheckBox}) {
           <label>
         <input 
           type="checkbox"
-          name="ballet"
+          name="Ballet"
           onChange={handleCheckBox}
         />
         Ballet
@@ -54,7 +54,7 @@ function Dance_Preference({handleCheckBox}) {
           <label>
         <input 
           type="checkbox"
-          name="soloDance"
+          name="Solo Dance"
           onChange={handleCheckBox}
         />
         Solo Dance
@@ -64,7 +64,7 @@ function Dance_Preference({handleCheckBox}) {
           <label>
         <input 
           type="checkbox"
-          name="waltz"
+          name="Waltz"
           onChange={handleCheckBox}
         />
         Waltz
@@ -76,7 +76,7 @@ function Dance_Preference({handleCheckBox}) {
           <label>
         <input 
           type="checkbox"
-          name="bachata"
+          name="Bachata"
           onChange={handleCheckBox}
         />
         Bachata
@@ -86,7 +86,7 @@ function Dance_Preference({handleCheckBox}) {
           <label>
         <input 
           type="checkbox"
-          name="tango"
+          name="Tango"
           onChange={handleCheckBox}
         />
         Tango
