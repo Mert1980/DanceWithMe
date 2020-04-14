@@ -48,7 +48,7 @@ function Landing() {
               <Login text="Find Your Matches" color="primary" />
             </h3>
             <p className="text-danger font-weight-bold h-25">
-              In England there are many people looking for a dance partner
+              Are you looking for your perfect dance partner? Let us find for you!
             </p>
           </Carousel.Caption>
         </Carousel.Item>
