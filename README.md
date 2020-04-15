@@ -27,16 +27,17 @@ One of the main outcomes of this project is figuring out how to create, explore 
 ---
 
 ## Learning Objectives and Supported Skills
-* Creating a user friendly React Application
+* Creating a user friendly React Application (using Functional/Class Bases Components and Hooks)
 * Building wireframes, mocks and prototype of pages
 * Setting up a professional folder structure
-* Setting up NodeJS and database connection
-* Setting up API endpoints
-* Using cloud database
-* Setting up user authentication in NodeJS
-* Debugging React code in IDE
 * Understanding Test-Driven-Development(TDD)
 * Implementing Continuous Integration and Continuous Deployment (CI/CD)
+* Using GitHub Project Board as project management tool
+* Setting up NodeJS and database connection
+* Setting up cloud database environment
+* Setting up API endpoints
+* Setting up user authentication in NodeJS
+* Debugging React code in IDE
 * Exploring and understanding DOM
 * Understanding code which is written by your team mate
 
