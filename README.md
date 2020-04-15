@@ -3,9 +3,11 @@
 >This repository is created for the final project of **[Hack Your Future Belgium](https://hackyourfuture.be/)** **Frontend Development Program** and build by *HTML5, CSS3, Bootstrap, MongoDB, Express, NodeJS and ReactJS (**MERN Stack***).
 One of the main outcomes of this project is figuring out how to create, explore and run a web application in a development environment, then deploying it to the production environment in accordance with TDD approach. 
 
+> **Dance-With-Me** application matches the users in accordance with their preferences (location, gender, age, weight and height) and show the events in which they can enjoy together.
+
 >Our main goal was not to deliver fully-featured web application, but instead to create a minimum viable product in 4 weeks. We had to work in an environment where Covid-19 measures were in place. That means, we had to work remotely, but that shouldn't hamper our development process. In order to overcome the side-effects of remote working, we set-up daily working sessions between team members and used the benefit of collaborative coding.  
 
-> At the very beginning, our biggest challange was setting-up the environment for Continuous Integration and Deployment (CI/CD). Once this was in place, we managed to progress smoothly. Of course, as every developer we stucked a lot ;) We spent hours exploring documentations, StackOverFlow and so on which improved our soft skills!  
+> At the very beginning, our biggest challenge was setting-up the environment for Continuous Integration and Continuous Deployment (CI/CD). Once this was in place, we managed to progress smoothly. Of course, as every developer we stucked a lot ;) We spent hours in exploring documentations, StackOverFlow and so on which only improved our soft skills!  
 
 >You may find the details of our project in the following lines. We are aware of the fact that there is so much room to be improved in this project, like establishing connections between the matched users (similar in Instagram, Facebook), uploading pictures of the users, setting-up email authentication and so on. You are more than welcomed to contribute in this project by opening an issue or opening a pull request. **We are stronger together!** 
 
