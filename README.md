@@ -58,8 +58,13 @@ One of the main outcomes of this project is figuring out how to create, explore 
 
 
 ## Technology-Tool-Stack
-
----
+- NodeJS : Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser. Consequently, Node.js represents a "JavaScript everywhere" paradigm,[6] unifying web-application development around a single programming language, rather than different languages for server- and client-side scripts.
+- MongoDB Atlas : Cloud-hosted MongoDB service on AWS, Azure and Google Cloud. With MongoDB Atlas, your self-healing clusters are made up of geographically distributed database instances to ensure no single point of failure. MongoDB Atlas makes it easy to control access to your database. Your database instances are deployed in a unique Virtual Private Cloud (VPC) to ensure network isolation.
+- MongoDB Compass: The GUI for MongoDB. Visualize, understand, and work with your data through an intuitive GUI. Modify your data with a powerful visual editing tool. Understand performance issues with visual explain plans, view utilization and manage your indices.
+- Mongoose : Provides a straight-forward, schema-based solution to model our application data. It includes built-in type casting, validation, query building.
+- ExpressJS : Express.js, or simply Express, is a web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs.[3] It has been called the de facto standard server framework for Node.js.
+- JWT : JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object.
+- Bcrypt : Bcrypt is a password hashing function.
 
 ## Project Structure
 
