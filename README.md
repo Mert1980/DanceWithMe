@@ -46,7 +46,14 @@ One of the main outcomes of this project is figuring out how to create, explore 
 
 ### installation:
 - Clone Develoment Master Branch of this repo
-- Install all dependencies in /DanceWithMe folder --> npm install
+- Install all Backend dependencies in **/DanceWithMe folder** --> **npm install**
+- Install all Frontend dependencies in **/DanceWithMe/client folder** --> **npm install**
+- Create a folder named **config** under **/API** folder
+- Create a file named **.env** under **config** folder
+- In the root folder **/DanceWithMe**,
+  - To run both backend and frontend --> **npm run dev**
+  - To run only backend --> **npm run dev-api** 
+  - To run only frontend --> **npm run dev-client** 
 
 
 ## Technology-Tool-Stack
