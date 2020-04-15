@@ -9,7 +9,7 @@ One of the main outcomes of this project is figuring out how to create, explore 
 
 > At the very beginning, our biggest challenge was setting-up the environment for Continuous Integration and Continuous Deployment (CI/CD). Once this was in place, we managed to progress smoothly. Of course, as every developer we stucked a lot ;) We spent hours in exploring documentations, StackOverFlow and so on which only improved our soft skills!  
 
->You may find the details of our project in the following lines. We are aware of the fact that there is so much room to be improved in this project, like establishing connections between the matched users (similar in Instagram, Facebook), uploading pictures of the users, setting-up email authentication and so on. You are more than welcomed to contribute in this project by opening an issue or opening a pull request. **We are stronger together!** 
+>You may find the details of our project in the following lines. We are aware of the fact that there is so much room to be improved in this project, like establishing connections between the matched users (similar in Instagram, Facebook), uploading pictures of the users, setting-up email authentication and so on. You are more than welcomed to contribute in this project by opening an issue or sending a pull request. **We are stronger together!** 
 
 ---
 ## Index
