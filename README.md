@@ -27,13 +27,15 @@ One of the main outcomes of this project is figuring out how to create, explore 
 ---
 
 ## Learning Objectives and Supported Skills
-* Creating React Application
-* Creating API
-* Debugging ReactJs code in IDE
-* Running tests scripts
-* Building wireframe, mock and prototype of pages
-* Understanding what "tdd" means
-* Navigating larger directory structures
+* Creating a user friendly React Application
+* Building wireframes, mocks and prototype of pages
+* Setting up a professional folder structure
+* Setting up NodeJS and database connection
+* Setting up API endpoints
+* Using cloud database
+* Setting up user authentication in NodeJS
+* Debugging React code in IDE
+* Understanding Test-Driven-Development(TDD)
 * Exploring and understanding DOM
 * Understanding code which is written by your team mate
 
