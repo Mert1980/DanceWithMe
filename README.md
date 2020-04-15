@@ -11,10 +11,10 @@ You may find details following the lines about our journey. To sum up, our main 
 * [Setup Environment](#setup-environment)
 	* [Installation](#installation)
 	* [Running Application](#running-application)
-  * [Usage](#Usage)
-* [Technology-Tool-Stack](#technology-and-tool-stack)
+  	* [Usage](#Usage)
+* [Technology-Tool-Stack](#technology-tool-stack)
 * [Project Structure](#project-structure)
-* [Contributing](#setup)
+* [Contributing](#contributing)
 * [Credits](#credits)
 * [License](#credits)
 
@@ -30,3 +30,49 @@ You may find details following the lines about our journey. To sum up, our main 
 * Navigating larger directory structures
 * Exploring and understanding DOM
 * Understanding code which is written by your team mate
+
+---
+## Setup Environment
+
+---
+
+## Technology-Tool-Stack
+
+---
+
+## Project Structure
+
+* :file_folder: **dance-with-me** (root project folder)
+    * :file_folder: **.circleci**
+    * :file_folder: **api**
+    	* :file_folder: **\_\_test\_\_**
+        * :file_folder: **preparation**
+    	* :file_folder: **public/js**
+        * :file_folder: **src**
+        * .gitignore
+        * dev.js
+   		* server.js
+	* :file_folder: **client**
+		* :file_folder: **public**
+		* :file_folder: **src**
+		* .gitignore
+		* package.json
+    * .gitignore
+    * README.md
+    * index.js
+    * jest.config.js
+    * package.json
+	    
+---
+
+## Contributing
+
+---
+
+## Credits
+
+---
+
+## License
+
+
