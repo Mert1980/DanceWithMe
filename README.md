@@ -45,7 +45,8 @@ One of the main outcomes of this project is figuring out how to create, explore 
 ## Setup Environment
 
 ### installation:
-- 
+- Clone Develoment Master Branch of this repo
+- Install all dependencies in /DanceWithMe folder --> npm install
 
 
 ## Technology-Tool-Stack
