@@ -46,14 +46,15 @@ One of the main outcomes of this project is figuring out how to create, explore 
 
 ### installation:
 - Clone Develoment Master Branch of this repo
-- Install all Backend dependencies in **/DanceWithMe folder** --> **npm install**
-- Install all Frontend dependencies in **/DanceWithMe/client folder** --> **npm install**
+- Install all Backend dependencies in **/DanceWithMe** folder --> run **npm install** in the terminal
+- Install all Frontend dependencies in **/DanceWithMe/client** folder --> run **npm install** in the terminal
 - Create a folder named **config** under **/API** folder
 - Create a file named **.env** under **config** folder
+- Add environment variables (**MONGODB_PSWD, JWT_SECRET and SENDGRID_API_KEY**) in this file
 - In the root folder **/DanceWithMe**,
-  - To run both backend and frontend --> **npm run dev**
-  - To run only backend --> **npm run dev-api** 
-  - To run only frontend --> **npm run dev-client** 
+  - To run both backend and frontend --> run **npm run dev** in the terminal
+  - To run only backend --> run **npm run dev-api** in the terminal
+  - To run only frontend -->run **npm run dev-client** in the terminal
 
 
 ## Technology-Tool-Stack
