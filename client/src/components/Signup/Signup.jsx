@@ -10,48 +10,62 @@ import Dance_Preference from "./Dance_Preference";
 import Partner_Physical_Info from "./Partner_Physical_Info";
 import useInput from "./use-input";
 
+// This components has 6 children (Basic_Info, Dance_Preference,
+// Location_Experience, More_About_You, Partner_Physical_Info
+// User_Physical_Info Components) and 1 external function (use-input) 
 function SignUp() {
-  const [show, setShow] = useState(false);
-  const [signedUp, setSignedUp] = useState(false);
-  const [gender, setGender] = useState("");
-  const [partner_gender, setPartnerGender] = useState("");
 
+  // "show" becomes "true" when user clicks "signup" button or vice versa 
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  // If post request returns with user data "signedUp" variable turns "true"
+  const [signedUp, setSignedUp] = useState(false);
+
+  // "gender" value becomes "male" or "female" depending which radio button user clicks
+  const [gender, setGender] = useState("");
   const handleButtonUser = event => {
     const { value } = event.target;
     setGender(value);
   };
 
+   // "partner_gender" value becomes "male" or "female" depending which radio button user clicks
+  const [partner_gender, setPartnerGender] = useState("");
   const handleButtonPartner = event => {
     const { value } = event.target;
     setPartnerGender(value);
   };
-  let checkedDanceTypes = [];
+
   
-  const handleCheckBox = event => {
+  // Dance preferences are stored in an array in String type 
+  let checkedDanceTypes = [];
+    const handleCheckBox = event => {
     const { name, checked } = event.target;
     if (checked) {
+      // If the user selects a dance type, it is pushed into the array
       checkedDanceTypes.push(name);
+      // If the user cancels the selection, it is removed from the array
     } else if (!checked) {
       checkedDanceTypes = checkedDanceTypes.filter(e => e !== name)
     }
   };
 
-  const name = useInput("");
-  const surname = useInput("");
-  const email = useInput("");
-  const password = useInput("");
-  const more_about_you = useInput("");
-  const age = useInput("");
-  const weight = useInput("");
-  const height = useInput("");
-  const partner_age = useInput("");
-  const partner_weight = useInput("");
-  const partner_height = useInput("");
-  const location = useInput("");
-  const years_of_experience = useInput("");
+  // useInput function is called to assign the event.target values
+  // to the following variables
+  const name = useInput(""); // String
+  const surname = useInput(""); // String
+  const email = useInput(""); // String
+  const password = useInput(""); // String
+  const more_about_you = useInput(""); // String
+  const age = useInput(""); // Number
+  const weight = useInput(""); // Number
+  const height = useInput(""); // Number
+  const partner_age = useInput(""); // String
+  const partner_weight = useInput(""); // String
+  const partner_height = useInput(""); // String
+  const location = useInput(""); // String
+  const years_of_experience = useInput(""); // Number
  
   // Send all the input to backend via axios post request
   function submitForm() {
@@ -76,6 +90,8 @@ function SignUp() {
       })
       .then(e => {
         if (e.data.token) {
+          // user token and ID is stored in local storage in order to use them
+          // when user wants to see matched users in profile page or wants to log out 
           localStorage.setItem("token", e.data.token);
           localStorage.setItem("ID", e.data.user._id);
           setSignedUp(true);

@@ -1,8 +1,7 @@
 import React from "react";
-import useInput from "./use-input";
 
-function Basic_Info({name, surname, email, password}) {
-  
+// name, surname, email, password parameters are coming from parent component (Signup)
+function Basic_Info({ name, surname, email, password }) {
   return (
     <div>
       <div className="form-group mt-4">
@@ -14,9 +13,8 @@ function Basic_Info({name, surname, email, password}) {
           placeholder="Enter first name"
           name="fname"
           required
-          value={name.value} 
+          value={name.value}
           onChange={name.onChange}
-          // {...name}
         ></input>
         <div className="valid-feedback">Valid.</div>
         <div className="invalid-feedback">Please fill out this field.</div>
@@ -30,9 +28,8 @@ function Basic_Info({name, surname, email, password}) {
           placeholder="Enter last name"
           name="lname"
           required
-          value={surname.value} 
+          value={surname.value}
           onChange={surname.onChange}
-          // {...surname}
         />
         <div className="valid-feedback">Valid.</div>
         <div className="invalid-feedback">Please fill out this field.</div>
@@ -45,9 +42,8 @@ function Basic_Info({name, surname, email, password}) {
           aria-describedby="emailHelp"
           placeholder="Enter email"
           required
-          value={email.value} 
+          value={email.value}
           onChange={email.onChange}
-          // {...email}
         />
         <div className="valid-feedback">Valid.</div>
         <div className="invalid-feedback">Please fill out this field.</div>
@@ -59,9 +55,8 @@ function Basic_Info({name, surname, email, password}) {
           className="form-control  "
           type="password"
           required
-          value={password.value} 
+          value={password.value}
           onChange={password.onChange}
-          // {...password}
           name="up"
           placeholder="Password(at least 7 letters/numbers)"
         />

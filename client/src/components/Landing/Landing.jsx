@@ -17,6 +17,8 @@ import dance1 from "../Landing/dance1.jpg";
 import dance2 from "../Landing/dance2.jpg";
 import dancing from "../Landing/dancing.png";
 
+// This is the landing page of the application
+// Is has two children (Login Component and Signup Component)
 function Landing() {
   return (
     <div>

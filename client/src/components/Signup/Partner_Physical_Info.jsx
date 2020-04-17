@@ -1,10 +1,12 @@
 import React from "react";
 
+// handleButtonPartner, partner_age, partner_weight, partner_height parameters
+// are coming from parent component (Signup)
 function Partner_Physical_Info({
   handleButtonPartner,
   partner_age,
   partner_weight,
-  partner_height
+  partner_height,
 }) {
   return (
     <div>
@@ -13,32 +15,27 @@ function Partner_Physical_Info({
       </div>
       <div class="row">
         <div class="col-sm-6">
-        <input
-          type="radio"
-          // className="custom-control-input"
-          name="genderPartner"
-          value="male"
-          id="male2"
-          onChange={handleButtonPartner}
-        />
+          <input
+            type="radio"
+            name="genderPartner"
+            value="male"
+            id="male2"
+            onChange={handleButtonPartner}
+          />
           <label for="male2">Male</label>
         </div>
         <div class="col-sm-6">
-        <input
-          type="radio"
-          // className="custom-control-input"
-          name="genderPartner"
-          value="female"
-          id="female2"
-          onChange={handleButtonPartner}
-        />
-        
-        <label for="female2">Female</label>
+          <input
+            type="radio"
+            name="genderPartner"
+            value="female"
+            id="female2"
+            onChange={handleButtonPartner}
+          />
+          <label for="female2">Female</label>
         </div>
       </div>
-   
-        
-    
+
       <div className="row mt-4">
         <div className="col-sm-12">
           {" "}
