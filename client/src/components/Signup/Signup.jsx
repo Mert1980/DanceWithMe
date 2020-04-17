@@ -53,6 +53,7 @@ function SignUp() {
   const location = useInput("");
   const years_of_experience = useInput("");
  
+  // Send all the input to backend via axios post request
   function submitForm() {
     axios
       .post("https://hyf-class6-dancewithme.herokuapp.com/api/users", {

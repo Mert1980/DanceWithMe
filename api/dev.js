@@ -18,7 +18,8 @@ devServer.get("/", (req, res) => {
   res.send("react frontend");
 });
 
-const port = 5000;
+// Port number is defined in .env file
+const port = process.env.PORT;
 devServer.listen(port, () =>
   console.log(`listening at http://localhost:${port}`)
 );
