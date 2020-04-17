@@ -3,28 +3,33 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
-    "dev-api": "nodemon backend/dev.js",
-    "dev-client": "cd frontend && npm run start",
+    "dev-api": "nodemon api/dev.js",
+    "dev-client": "cd client && npm run start",
     "start": "node index.js",
-    "heroku-postbuild": "cd frontend && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "test": "cd api && jest --collectCoverage=true --forceExit",
+    "test:watch": "cd api && jest --watch --collectCoverage=true --runInBand --detectOpenHandles"
   },
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
     "@sendgrid/mail": "^6.5.4",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.5",
     "multer": "^1.4.2",
+    "reactstrap": "^8.4.1",
     "sharp": "^0.25.1",
-    "validator": "^12.2.0",
-    "dotenv": "^8.2.0"
+    "validator": "^12.2.0"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
-    "nodemon": "^2.0.2"
+    "jest": "^25.2.3",
+    "nodemon": "^2.0.2",
+    "supertest": "^4.0.2"
   }
 }
