@@ -5,15 +5,25 @@ import { Redirect } from 'react-router';
 import useInput from './use-input'
 
 function Login(props) {
+  // when show is true, login component is shown as a popup
   const [show, setShow] = useState(false);
+
+  // User is redirected to profile page only if loggedIn is true
   const [loggedIn, setLoggedIn] = useState(false);
 
+  // user email and password are received from event.target via useInput function 
   const email = useInput('');
   const password = useInput('');
   
+  // set show variable to "false" when user clicks signup button
   const handleClose = () => setShow(false);
+
+  // set show variable to "true" when user clicks signup button
   const handleShow = () => setShow(true);
 
+  // send post request to backend route handler
+  // If successful, this post request saves token and ID into local storage
+  // Bootstrap is used to style the component
   function submitForm() {
     axios
       .post('https://hyf-class6-dancewithme.herokuapp.com/api/users/login', { email: email.value, password:password.value})
@@ -22,7 +32,6 @@ function Login(props) {
          alert("You have successfully logged in!")
           localStorage.setItem('token', e.data.token);
           localStorage.setItem('ID', e.data.user._id);
-          // axios.defaults.headers.common["Authorization"] = e.data.token;
           setLoggedIn(true);
           } else {
           setLoggedIn(false);
@@ -34,7 +43,7 @@ function Login(props) {
   }
   return (
     <>
-    {loggedIn ? (<Redirect to="/users/me" />): // we need frontend route here
+    {loggedIn ? (<Redirect to="/users/me" />): // this is the frontend router
     <div>
       <Button variant={props.color} onClick={handleShow}>
         {props.text}

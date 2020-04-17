@@ -1,9 +1,25 @@
 import React, { useState } from "react";
 
-function UserMatch(props) {
-  console.log(props.item);
-  const interest = props.item.dance_preference.join(", ");
+// matched users are passed into this component as props
+function ListMatchedUsers(props) {
 
+  // map and render "UserMatch" component for every user
+  // pass individual user data (item) as props
+  const matchedUsers = props.users.map((item) => <UserMatch item={item} />);
+  return (
+    <div id="collapseOne" class="collapse show">
+      {matchedUsers}
+    </div>
+  );
+}
+
+// props is the individual user data
+function UserMatch(props) {
+  // We merge dance preferences coming from check boxes
+  const dancePreferences = props.item.dance_preference.join(", ");
+
+  // If the user clicks plus (+) button showMail variable turns into "true"
+  // We control the show of the user mail with this variable
   const [showMail, setshowMail] = useState(false);
   const handleClick = () => {
     if (!showMail) {
@@ -28,7 +44,7 @@ function UserMatch(props) {
           </div>
           <div class="col-sm-6">
             <h6 class="font-weight-light">{props.item.name}</h6>
-            <small>{interest}</small>
+            <small>{dancePreferences}</small>
             <p class="lead">{props.item.location}</p>
             {showMail && <h6 class="text-primary">{props.item.email}</h6>}
           </div>
@@ -48,13 +64,4 @@ function UserMatch(props) {
   );
 }
 
-function ListMatchedUsers(props) {
-  console.log(props.users);
-  const matchedUsers = props.users.map((item) => <UserMatch item={item} />);
-  return (
-    <div id="collapseOne" class="collapse show">
-      {matchedUsers}
-    </div>
-  );
-}
 export default ListMatchedUsers;

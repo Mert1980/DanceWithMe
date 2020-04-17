@@ -3,13 +3,25 @@ import axios from "axios";
 import { Button } from "react-bootstrap";
 import ListMatchedUsers from "./ListMatchedUsers";
 
+// This component renders matched users in the profile page
 function MatchUsers() {
+  // If user clicks the "match users" button, "clicked" variable turns into "true"
   const [clicked, setClicked] = useState(false);
+
+  // If returned value of the post request in an empty array, an informative message
+  // is set into "text" variable
   const [text, setText] = useState("");
+
+  // We receive the matched users as an array of objects from the post request,
+  // then assign them into "users" variable in order to render them in the child component
+  // (ListMatchedUsers)
   const [users, setUsers] = useState([]);
 
   function handleClick() {
+    // set "clicked" variable to "true"
     setClicked(true);
+
+    // get token from local storage in order to send it to backend to verify user
     const config = {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     };

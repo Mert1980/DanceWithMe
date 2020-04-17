@@ -1,8 +1,7 @@
 import React from "react";
-import useInput from "./use-input";
 
-function More_About_You({more_about_you}) {
-  
+// more_about_you parameter is coming from parent component (Signup)
+function More_About_You({ more_about_you }) {
   return (
     <div>
       <h6 className="mt-4">More about you</h6>
@@ -13,9 +12,8 @@ function More_About_You({more_about_you}) {
           placeholder="Tell us a bit more about yourself..."
           id="text"
           name="text"
-          value={more_about_you.value} 
+          value={more_about_you.value}
           onChange={more_about_you.onChange}
-          // {...more_about_you}
         ></textarea>
       </div>
     </div>
