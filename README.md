@@ -58,16 +58,16 @@ One of the main outcomes of this project is figuring out how to create, explore 
   - To run only frontend -->run **npm run dev-client** in the terminal
   
 ### usage
-** Landing Page **
+**Landing Page**
 ![](https://github.com/Mert1980/DanceWithMe/blob/Development_Master/client/public/images/landing.png?raw=true)
 
-** Sign Up **
+**Sign Up**
 ![](https://github.com/Mert1980/DanceWithMe/blob/Development_Master/client/public/images/signup.png?raw=true)
 
-** Sign In **
+**Sign In**
 ![](https://github.com/Mert1980/DanceWithMe/blob/Development_Master/client/public/images/signin.png?raw=true)
 
-** Profile Page **
+**Profile Page**
 ![](https://github.com/Mert1980/DanceWithMe/blob/Development_Master/client/public/images/profilePage.png?raw=true)
 
 ## Technology-Tool-Stack
