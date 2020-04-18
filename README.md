@@ -58,8 +58,17 @@ One of the main outcomes of this project is figuring out how to create, explore 
   - To run only frontend -->run **npm run dev-client** in the terminal
   
 ### usage
-
+** Landing Page **
 ![](https://github.com/Mert1980/DanceWithMe/blob/Development_Master/client/public/images/landing.png?raw=true)
+
+** Sign Up **
+![](https://github.com/Mert1980/DanceWithMe/blob/Development_Master/client/public/images/signup.png?raw=true)
+
+** Sign In **
+![](https://github.com/Mert1980/DanceWithMe/blob/Development_Master/client/public/images/signin.png?raw=true)
+
+** Profile Page **
+![](https://github.com/Mert1980/DanceWithMe/blob/Development_Master/client/public/images/profilePage.png?raw=true)
 
 ## Technology-Tool-Stack
 - **NodeJS** : Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser. Consequently, Node.js represents a "JavaScript everywhere" paradigm,[6] unifying web-application development around a single programming language, rather than different languages for server- and client-side scripts.
