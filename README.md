@@ -51,11 +51,12 @@ One of the main outcomes of this project is figuring out how to create, explore 
 - Create a folder named **config** under **/API** folder
 - Create a file named **.env** under **config** folder
 - Add environment variables (**MONGODB_PSWD, JWT_SECRET and SENDGRID_API_KEY**) in this file
-- In the root folder **/DanceWithMe**,
+
+  ### running-application
+  In the root folder **/DanceWithMe**,
   - To run both backend and frontend --> run **npm run dev** in the terminal
   - To run only backend --> run **npm run dev-api** in the terminal
   - To run only frontend -->run **npm run dev-client** in the terminal
-
 
 ## Technology-Tool-Stack
 - **NodeJS** : Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser. Consequently, Node.js represents a "JavaScript everywhere" paradigm,[6] unifying web-application development around a single programming language, rather than different languages for server- and client-side scripts.
@@ -64,7 +65,9 @@ One of the main outcomes of this project is figuring out how to create, explore 
 - **Mongoose** : Provides a straight-forward, schema-based solution to model our application data. It includes built-in type casting, validation, query building.
 - **ExpressJS** : Express.js, or simply Express, is a web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs.[3] It has been called the de facto standard server framework for Node.js.
 - **JWT** : JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object.
-- **Bcrypt** : Bcrypt is a password hashing function.
+- **Bcrypt** : Bcrypt is a password hashing function designed by Niels Provos and David Mazières, based on the Blowfish cipher, and presented at USENIX in 1999. The bcrypt function is the default password hash algorithm for OpenBSD[2] and other systems including some Linux distributions such as SUSE Linux.
+
+
 
 ## Project Structure
 
