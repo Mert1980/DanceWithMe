@@ -70,36 +70,11 @@ One of the main outcomes of this project is figuring out how to create, explore 
 - **Bootstrap** : Bootstrap is a potent front-end framework used to create modern websites and web apps. It's open-source and free to use, yet features numerous HTML and CSS templates for UI interface elements such as buttons and forms. Bootstrap also supports JavaScript extensions.
 - **Axios** : Axios is a Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser that also supports the ES6 Promise API. 
 
-## Project Structure
-
-* :file_folder: **dance-with-me** (root project folder)
-    * :file_folder: **.circleci**
-    * :file_folder: **api**
-    	* :file_folder: **\_\_test\_\_**
-        * :file_folder: **preparation**
-    	* :file_folder: **public/js**
-        * :file_folder: **src**
-        * .gitignore
-        * dev.js
-   		* server.js
-	* :file_folder: **client**
-		* :file_folder: **public**
-		* :file_folder: **src**
-		* .gitignore
-		* package.json
-    * .gitignore
-    * README.md
-    * index.js
-    * jest.config.js
-    * package.json
-	    
 ---
 
 ## Contributing
-
+   You are more than welcomed to contribute in this project by opening an issue or sending a pull request.
 ---
-
-## Credits
 
 ---
 
