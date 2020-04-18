@@ -23,7 +23,7 @@ function Landing() {
   return (
     <div>
       <Navbar fixed="top" bg="light" variant="light">
-        <Navbar.Brand href="http://localhost:3000/">
+        <Navbar.Brand href="https://hyf-class6-dancewithme.herokuapp.com/">
           <img
             alt=""
             src={dancing}
@@ -34,7 +34,7 @@ function Landing() {
           DanceWithMe
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="http://localhost:3000/">Home</Nav.Link>
+          <Nav.Link href="https://hyf-class6-dancewithme.herokuapp.com/">Home</Nav.Link>
           <Nav.Link href="about.html">About</Nav.Link>
         </Nav>
         <Form inline>
