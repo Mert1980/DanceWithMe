@@ -19,7 +19,6 @@ One of the main outcomes of this project is figuring out how to create, explore 
 	* [Running Application](#running-application)
   	* [Usage](#Usage)
 * [Technology-Tool-Stack](#technology-tool-stack)
-* [Project Structure](#project-structure)
 * [Contributing](#contributing)
 * [License](#credits)
 
