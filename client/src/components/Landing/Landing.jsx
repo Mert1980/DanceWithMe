@@ -23,7 +23,7 @@ function Landing() {
   return (
     <div>
       <Navbar fixed="top" bg="light" variant="light">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="http://localhost:3000/">
           <img
             alt=""
             src={dancing}
@@ -34,8 +34,8 @@ function Landing() {
           DanceWithMe
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#about">About</Nav.Link>
+          <Nav.Link href="http://localhost:3000/">Home</Nav.Link>
+          <Nav.Link href="about.html">About</Nav.Link>
         </Nav>
         <Form inline>
           <Login text="Login" color="outline-primary" />
@@ -50,7 +50,8 @@ function Landing() {
               <Login text="Find Your Matches" color="primary" />
             </h3>
             <p className="text-danger font-weight-bold h-25">
-              Are you looking for your perfect dance partner? Let us find for you!
+              Are you looking for your perfect dance partner? Let us find for
+              you!
             </p>
           </Carousel.Caption>
         </Carousel.Item>
