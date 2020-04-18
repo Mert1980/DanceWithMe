@@ -59,6 +59,8 @@ One of the main outcomes of this project is figuring out how to create, explore 
   
 ### usage
 
+![](https://github.com/Mert1980/DanceWithMe/blob/Development_Master/client/public/images/landing.png?raw=true)
+
 ## Technology-Tool-Stack
 - **NodeJS** : Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser. Consequently, Node.js represents a "JavaScript everywhere" paradigm,[6] unifying web-application development around a single programming language, rather than different languages for server- and client-side scripts.
 - **MongoDB Atlas** : Cloud-hosted MongoDB service on AWS, Azure and Google Cloud. With MongoDB Atlas, your self-healing clusters are made up of geographically distributed database instances to ensure no single point of failure. MongoDB Atlas makes it easy to control access to your database. Your database instances are deployed in a unique Virtual Private Cloud (VPC) to ensure network isolation.
