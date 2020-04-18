@@ -52,7 +52,7 @@ One of the main outcomes of this project is figuring out how to create, explore 
 - Create a file named **.env** under **config** folder
 - Add environment variables (**MONGODB_PSWD, JWT_SECRET and SENDGRID_API_KEY**) in this file
 
-  ### running-application
+### running-application
   In the root folder **/DanceWithMe**,
   - To run both backend and frontend --> run **npm run dev** in the terminal
   - To run only backend --> run **npm run dev-api** in the terminal
@@ -66,8 +66,9 @@ One of the main outcomes of this project is figuring out how to create, explore 
 - **ExpressJS** : Express.js, or simply Express, is a web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs.[3] It has been called the de facto standard server framework for Node.js.
 - **JWT** : JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object.
 - **Bcrypt** : Bcrypt is a password hashing function designed by Niels Provos and David Mazières, based on the Blowfish cipher, and presented at USENIX in 1999. The bcrypt function is the default password hash algorithm for OpenBSD[2] and other systems including some Linux distributions such as SUSE Linux.
-
-
+- **React** : React. js is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. It's used for handling the view layer for web and mobile apps. React also allows us to create reusable UI components.
+- **Bootstrap** : Bootstrap is a potent front-end framework used to create modern websites and web apps. It's open-source and free to use, yet features numerous HTML and CSS templates for UI interface elements such as buttons and forms. Bootstrap also supports JavaScript extensions.
+- **Axios** : Axios is a Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser that also supports the ES6 Promise API. 
 
 ## Project Structure
 
