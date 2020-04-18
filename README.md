@@ -21,7 +21,6 @@ One of the main outcomes of this project is figuring out how to create, explore 
 * [Technology-Tool-Stack](#technology-tool-stack)
 * [Project Structure](#project-structure)
 * [Contributing](#contributing)
-* [Credits](#credits)
 * [License](#credits)
 
 ---
