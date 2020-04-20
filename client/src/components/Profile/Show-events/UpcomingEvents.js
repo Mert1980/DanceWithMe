@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import EventHandler from "./EventHandler";
 import { Link } from "react-router-dom";
 
+// This component renders EventHandler component
+// It includes a link for viewMore URL
 class UpcomingEvents extends Component {
   render() {
     return (

@@ -3,8 +3,13 @@ import axios from "axios";
 import { Redirect } from "react-router";
 import { Button } from "react-bootstrap";
 
+// This component handles the logout operation
 function Logout() {
+  // We control the logout state with "loggedOut" variable
   const [loggedOut, setLoggedOut] = useState(false);
+
+  // When user clicks logout button, token is retreived from localStorage
+  // and is sent back to backend router
   function handleClick() {
    const config = {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
@@ -12,7 +17,7 @@ function Logout() {
   const bodyParameters = {
      key: "value"
   }; 
-
+    // axios is used to send post request
     axios
       .post(
         "https://hyf-class6-dancewithme.herokuapp.com/api/users/logout", 
@@ -20,7 +25,6 @@ function Logout() {
         config
       )
       .then(e => {
-          console.log(e)
         if (e.status === 200) {
           alert("You have successfully logged out!");
           setLoggedOut(true);
@@ -32,7 +36,7 @@ function Logout() {
   return (
     <>
       {loggedOut ? (
-        <Redirect to="/" /> // we need frontend route here
+        <Redirect to="/" /> // This is frontend route. It redirects user to the homepage if logout is clicked
       ) : (
         <div>
           <Button onClick={handleClick}>Logout</Button>

@@ -17,11 +17,13 @@ import dance1 from "../Landing/dance1.jpg";
 import dance2 from "../Landing/dance2.jpg";
 import dancing from "../Landing/dancing.png";
 
+// This is the landing page of the application
+// Is has two children (Login Component and Signup Component)
 function Landing() {
   return (
     <div>
       <Navbar fixed="top" bg="light" variant="light">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="https://hyf-class6-dancewithme.herokuapp.com/">
           <img
             alt=""
             src={dancing}
@@ -32,8 +34,8 @@ function Landing() {
           DanceWithMe
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#about">About</Nav.Link>
+          <Nav.Link href="https://hyf-class6-dancewithme.herokuapp.com/">Home</Nav.Link>
+          <Nav.Link href="about.html">About</Nav.Link>
         </Nav>
         <Form inline>
           <Login text="Login" color="outline-primary" />
@@ -48,7 +50,8 @@ function Landing() {
               <Login text="Find Your Matches" color="primary" />
             </h3>
             <p className="text-danger font-weight-bold h-25">
-              Are you looking for your perfect dance partner? Let us find for you!
+              Are you looking for your perfect dance partner? Let us find for
+              you!
             </p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -68,9 +71,10 @@ function Landing() {
                 <h3 className="text-info">Together is more</h3>
                 <hr></hr>
                 <p>
-                  DanceWithMe have helped people being more social and active
-                  for years. To get to know people and make friends. To have a
-                  healthier and more fun life. Sign up and see members near you.
+                  DanceWithMe has a mission to help people be more social and
+                  active. To get to know people and make friends. To have a
+                  healthier and more fun life. Sign up and find the perfect
+                  dance partner near you.
                 </p>
               </Container>
             </Jumbotron>
@@ -78,11 +82,12 @@ function Landing() {
           <Col sm={4}>
             <Jumbotron fluid>
               <Container>
-                <h3 className="text-info">Together is more</h3>
+                <h3 className="text-info">Reliable</h3>
                 <hr></hr>
                 <p>
-                  This is a modified jumbotron that occupies the entire
-                  horizontal space of its parent.
+                  All profiles are screened manually. As such, the reliability
+                  of the members is very high. Our team of employees closely
+                  monitor the website daily.
                 </p>
               </Container>
             </Jumbotron>
@@ -90,12 +95,12 @@ function Landing() {
           <Col sm={4}>
             <Jumbotron fluid>
               <Container>
-                <h3 className="text-info">Together is more</h3>
+                <h3 className="text-info">Security</h3>
                 <hr></hr>
                 <p>
-                  We're a community of dancers of all ages with a passion for
-                  dance. Members use DanceWithMe to connect with others for
-                  social and/or competitive dancing.
+                  Your privacy comes first for us. You don't have to fill in
+                  anything that isn't necessary. Your data isn't shared with
+                  third parties.
                 </p>
               </Container>
             </Jumbotron>

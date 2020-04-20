@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
+// We use skiddle api to fetch events
 const url = `https://www.skiddle.com/api/v1/events/search/?api_key=${process.env.REACT_APP_SKIDDLE_API_KEY}&GB&eventcode=THEATRE&order=distance&date=1&limit=3&imagefilter=1&description=1&under18=0`;
 
-console.log(process.env.SKIDDLE_API_KEY)
-
 class EventHandler extends Component {
+  // Initial state of the events variable is an empty array
   state = {
     events: [],
   };
@@ -12,12 +12,14 @@ class EventHandler extends Component {
     const request = await fetch(url);
     const respond = await request.json();
     
+    // Once we fetch events from API, we store them into events variable
     this.setState({ events: respond.results });
-    console.log(this.state.events);
   };
   componentDidMount() {
-    this.handleGetRequest(); // we dont need anymore. Because when we want to data uploading, we will click submit button
+    this.handleGetRequest(); 
   }
+
+  // We render name, date, location and link of the event
   render() {
     return (
       <div>
