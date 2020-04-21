@@ -6,10 +6,10 @@ require('dotenv').config({path: path.resolve(process.cwd(), 'api','config', '.en
 
 // connect mongodb cluster with a connection string
 // MONGODB_PSWD is the password created in mongodb cluster. We store it in .env file
-const uri = `mongodb+srv://HYF:${process.env.MONGODB_PSWD}@cluster0-by0o2.mongodb.net/test?retryWrites=true&w=majority`
+// const uri = `mongodb+srv://HYF:${process.env.MONGODB_PSWD}@cluster0-by0o2.mongodb.net/test?retryWrites=true&w=majority`
 
 // mongodb://127.0.0.1:27017/DanceApp --> this url is an alternative local database connection
-    mongoose.connect(uri, {
+    mongoose.connect("mongodb://127.0.0.1:27017/DanceApp", {
     useNewUrlParser:true,
     useUnifiedTopology: true,
     useFindAndModify:false,
