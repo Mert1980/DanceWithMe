@@ -34,6 +34,7 @@ function Login(props) {
         console.log(e);
         if (e.data.token) {
           alert("You have successfully logged in!");
+          console.log(e.data.user._id)
           localStorage.setItem("token", e.data.token);
           localStorage.setItem("ID", e.data.user._id);
           setLoggedIn(true);

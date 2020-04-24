@@ -7,13 +7,16 @@ const auth = async (req, res, next) => {
   try {
     // Token is received from front-end along in request headet with a Bearer field inside.
     // "Bearer " field is removed by replacing it with empty string
+    console.log("I am here")
     const token = req.header('Authorization').replace('Bearer ', '');
-
+    console.log(token)
     // Token is verified by using JWT package via JWT_SECRET keyword that we created in user module.
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    console.log(decoded)
         
     // Find a user with a correct ID who has authentication token. 
     const user = await User.findOne({_id: decoded._id, 'tokens.token': token });
+    console.log(user)
     
     /* When the user logs out we will delete the auth token from the tokens
      array of the user. So if the user tries to authenticate with the same token,

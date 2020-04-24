@@ -5,12 +5,12 @@ const router = new express.Router();
 const sendWelcomeEmail = require("../emails/account");
 
 /**
-* Just a simple test endpoint to demo how to test with Jest
-* Ref: https://devhints.io/jest
-**/
-router.get('/test', async (req, res) => {
-  res.json({ message: 'pass!' })
-})
+ * Just a simple test endpoint to demo how to test with Jest
+ * Ref: https://devhints.io/jest
+ **/
+router.get("/test", async (req, res) => {
+  res.json({ message: "pass!" });
+});
 
 // This router creates a new user in database
 router.post("/users", async (req, res) => {
@@ -70,7 +70,7 @@ router.post("/users/logout", auth, async (req, res) => {
 });
 
 // This route shows matched users when user goes to profile page.
-// User is directed to profile page when he/she signs up or logs in. 
+// User is directed to profile page when he/she signs up or logs in.
 // Authentication middelware function is called before switcing to profile page
 // The purpose of this middelware is to ensure authenticated user has access to profile
 router.post("/users/me", auth, async (req, res) => {
@@ -78,17 +78,37 @@ router.post("/users/me", auth, async (req, res) => {
     // Location, partner gender, partner-age, partner-weight and partner-height
     // is sent to findMatchedUsers function as variables.
     const matched = await User.findMatchedUsers(
-      req.user.location, 
+      req.user.location,
       req.user.partner_gender,
       req.user.partner_age,
       req.user.partner_weight,
       req.user.partner_height
-      );
+    );
     // Send matched user data to front-end
     res.send(matched);
   } catch (e) {
     // Send status code 500 in case of an error
     res.status(500).send();
+  }
+});
+// This route updates users profile
+// req.user is sent from auth function in authentication.js
+// req.body is sent by the client
+router.patch("/users/me", async (req, res) => {
+  const user = await User.findOne({ _id: req.body._id });
+  const updates = Object.keys(req.body);
+
+  try {
+    updates.forEach((field) => {
+      if (req.body[field] !== "" && req.body[field].length !== 0) {
+        user[field] = req.body[field];
+        console.log(req.body[field]);
+      }
+    });
+    await user.save();
+    res.status(200).send(user);
+  } catch (e) {
+    res.status(400).send(e);
   }
 });
 

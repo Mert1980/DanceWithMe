@@ -6,6 +6,7 @@ import Login from "../components/Login/Login";
 import Landing from "../components/Landing/Landing";
 import Profile from "../components/Profile/Profile";
 import ViewMore from "../components/Profile/Show-events/ViewMore";
+import Update from "../components/Update/Update";
 export default class MyRoutes extends React.Component {
   constructor() {
     super();
