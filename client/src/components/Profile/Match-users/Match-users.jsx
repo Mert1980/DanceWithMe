@@ -11,6 +11,7 @@ function MatchUsers() {
   // If returned value of the post request in an empty array, an informative message
   // is set into "text" variable
   const [text, setText] = useState("");
+  const [show, setShow] = useState(false)
 
   // We receive the matched users as an array of objects from the post request,
   // then assign them into "users" variable in order to render them in the child component
@@ -39,6 +40,7 @@ function MatchUsers() {
         if (e.data.length !== 0) {
           setUsers(e.data);
         } else {
+          setShow(true)
           setText(
             <div class="alert alert-info alert-dismissible fade show">
               <strong>Sorry!</strong> There are no registered users matching
@@ -58,7 +60,7 @@ function MatchUsers() {
         <div>
           <ListMatchedUsers users={users} />
           <br />
-          {text}
+          {show && text}
         </div>
       )}
     </>
