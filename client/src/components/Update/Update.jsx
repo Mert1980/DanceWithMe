@@ -58,7 +58,7 @@ function Update() {
 
   // Send all the input to backend via axios post request
   function submitForm() {
-    const id = localStorage.getItem("ID")
+    const id = localStorage.getItem("ID");
     axios
       .patch("https://hyf-class6-dancewithme.herokuapp.com/api/users/me", {
         _id: id,
@@ -76,16 +76,8 @@ function Update() {
         dance_preference: checkedDanceTypes,
       })
       .then((e) => {
-        console.log(e.data);
-        if (e.status === 200) {
-          // user token and ID is stored in local storage in order to use them
-          // when user wants to see matched users in profile page or wants to log out
-          // localStorage.setItem("token", e.data.token);
-          // localStorage.setItem("ID", e.data.user._id);
-          setSignedUp(true);
-        } else {
-          setSignedUp(false);
-        }
+        console.log(e)
+        setShow(false)
       })
       .catch((err) => {
         console.log(err);
@@ -93,54 +85,50 @@ function Update() {
   }
   return (
     <div>
-      {signedUp ? (
-        <Redirect to="/users/me" />
-      ) : (
-        <div>
-          <Button variant="outline-primary" onClick={handleShow}>
-            Update
-          </Button>
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Body>
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  submitForm();
-                }}
-                action="/newaccount"
-                method="post"
-                className="was-validated"
-              >
-                <Basic_Info password={password} />
-                <Location_Experience
-                  location={location}
-                  years_of_experience={years_of_experience}
-                />
-                <More_About_You more_about_you={more_about_you} />
-                <User_Physical_Info age={age} weight={weight} height={height} />
-                <div className="container">
-                  <h5 className="text-success mt-5">Update Your Preferences</h5>
-                  <hr />
-                  <div className="container border border-top-0 border-info px-5 py-2">
-                    <Partner_Physical_Info
-                      handleButtonPartner={handleButtonPartner}
-                      partner_age={partner_age}
-                      partner_weight={partner_weight}
-                      partner_height={partner_height}
-                    />
-                    <Dance_Preference handleCheckBox={handleCheckBox} />
-                  </div>
+      <div>
+        <Button variant="outline-primary" onClick={handleShow}>
+          Update
+        </Button>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Body>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                submitForm();
+              }}
+              action="/newaccount"
+              method="post"
+              className="was-validated"
+            >
+              <Basic_Info password={password} />
+              <Location_Experience
+                location={location}
+                years_of_experience={years_of_experience}
+              />
+              <More_About_You more_about_you={more_about_you} />
+              <User_Physical_Info age={age} weight={weight} height={height} />
+              <div className="container">
+                <h5 className="text-success mt-5">Update Your Preferences</h5>
+                <hr />
+                <div className="container border border-top-0 border-info px-5 py-2">
+                  <Partner_Physical_Info
+                    handleButtonPartner={handleButtonPartner}
+                    partner_age={partner_age}
+                    partner_weight={partner_weight}
+                    partner_height={partner_height}
+                  />
+                  <Dance_Preference handleCheckBox={handleCheckBox} />
                 </div>
-                <div className="container my-3">
-                  <button type="submit" className="btn btn-primary btn-block">
-                    Submit to update your profile
-                  </button>
-                </div>
-              </form>
-            </Modal.Body>
-          </Modal>
-        </div>
-      )}
+              </div>
+              <div className="container my-3">
+                <button type="submit" className="btn btn-primary btn-block">
+                  Submit to update your profile
+                </button>
+              </div>
+            </form>
+          </Modal.Body>
+        </Modal>
+      </div>
     </div>
   );
 }
