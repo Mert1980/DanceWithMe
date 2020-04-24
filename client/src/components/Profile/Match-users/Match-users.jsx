@@ -31,7 +31,7 @@ function MatchUsers() {
 
     axios
       .post(
-        "http://localhost:5000/api/users/me",
+        "https://hyf-class6-dancewithme.herokuapp.com/api/users/me",
         bodyParameters,
         config
       )

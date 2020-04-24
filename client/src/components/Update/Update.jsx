@@ -60,7 +60,7 @@ function Update() {
   function submitForm() {
     const id = localStorage.getItem("ID")
     axios
-      .patch("http://localhost:5000/api/users/me", {
+      .patch("https://hyf-class6-dancewithme.herokuapp.com/api/users/me", {
         _id: id,
         password: password.value,
         location: location.value,
