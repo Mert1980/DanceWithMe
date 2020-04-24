@@ -94,14 +94,21 @@ router.post("/users/me", auth, async (req, res) => {
 // This route updates users profile
 // req.user is sent from auth function in authentication.js
 // req.body is sent by the client
-router.patch("/users/me", auth, async (req, res) => {
+router.patch("/users/me", async (req, res) => {
+  const user = await User.findOne({ _id: req.body._id });
   const updates = Object.keys(req.body);
+
   try {
-    updates.forEach((field) => (req.user[field] = req.body[field]));
-    await req.user.save();
-    res.send(req.user);
+    updates.forEach((field) => {
+      if (req.body[field] !== "" && req.body[field].length !== 0) {
+        user[field] = req.body[field];
+        console.log(req.body[field]);
+      }
+    });
+    await user.save();
+    res.status(200).send(user);
   } catch (e) {
-    res.status(400).send(e.message);
+    res.status(400).send(e);
   }
 });
 

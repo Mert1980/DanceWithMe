@@ -49,7 +49,7 @@ const userSchema = new mongoose.Schema({
   },
   more_about_you: {
     type: String,
-    required: true,
+    required: false,
   },
   gender: {
     type: String,

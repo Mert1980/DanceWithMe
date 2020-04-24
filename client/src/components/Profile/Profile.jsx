@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import MatchUsers from "./Match-users/Match-users";
 import Logout from "../Logout/Logout";
+import Update from "../Update/Update";
 import UpcomingEvents from "../Profile/Show-events/UpcomingEvents";
 import { Navbar, Nav, Form } from "react-bootstrap";
 import dancing from "../Landing/dancing.png";
 
-// This component has 3 children; UpcomingEvents, MatchUsers and Logout
+// This component has 3 children; UpcomingEvents, MatchUsers, Update and Logout
 function Profile() {
   return (
     <div>
@@ -23,9 +24,11 @@ function Profile() {
           </Navbar.Brand>
           <Nav className="mr-auto"></Nav>
           <Form inline>
-            <button type="button" class="btn btn-secondary mr-2">
-              Update
-            </button>
+            
+            <a href="#!" className="btn btn-outline-white btn-rounded">
+                <Update />
+              </a>
+            
             <Logout />
           </Form>
         </Navbar>

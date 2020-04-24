@@ -12,10 +12,9 @@ import useInput from "./use-input";
 
 // This components has 6 children (Basic_Info, Dance_Preference,
 // Location_Experience, More_About_You, Partner_Physical_Info
-// User_Physical_Info Components) and 1 external function (use-input) 
-function SignUp() {
-
-  // "show" becomes "true" when user clicks "signup" button or vice versa 
+// User_Physical_Info Components) and 1 external function (use-input)
+function Update() {
+  // "show" becomes "true" when user clicks "update" button or vice versa
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -23,39 +22,29 @@ function SignUp() {
   // If post request returns with user data "signedUp" variable turns "true"
   const [signedUp, setSignedUp] = useState(false);
 
-  // "gender" value becomes "male" or "female" depending which radio button user clicks
-  const [gender, setGender] = useState("");
-  const handleButtonUser = event => {
-    const { value } = event.target;
-    setGender(value);
-  };
-
-   // "partner_gender" value becomes "male" or "female" depending which radio button user clicks
+  // "partner_gender" value becomes "male" or "female" depending which radio button user clicks
   const [partner_gender, setPartnerGender] = useState("");
-  const handleButtonPartner = event => {
+  const handleButtonPartner = (event) => {
     const { value } = event.target;
     setPartnerGender(value);
   };
 
-  
-  // Dance preferences are stored in an array in String type 
+  // Dance preferences are stored in an array in String type
   let checkedDanceTypes = [];
-    const handleCheckBox = event => {
+  const handleCheckBox = (event) => {
     const { name, checked } = event.target;
     if (checked) {
       // If the user selects a dance type, it is pushed into the array
       checkedDanceTypes.push(name);
       // If the user cancels the selection, it is removed from the array
     } else if (!checked) {
-      checkedDanceTypes = checkedDanceTypes.filter(e => e !== name)
+      checkedDanceTypes = checkedDanceTypes.filter((e) => e !== name);
     }
   };
 
   // useInput function is called to assign the event.target values
   // to the following variables
-  const name = useInput(""); // String
-  const surname = useInput(""); // String
-  const email = useInput(""); // String
+
   const password = useInput(""); // String
   const more_about_you = useInput(""); // String
   const age = useInput(""); // Number
@@ -66,14 +55,13 @@ function SignUp() {
   const partner_height = useInput(""); // String
   const location = useInput(""); // String
   const years_of_experience = useInput(""); // Number
- 
+
   // Send all the input to backend via axios post request
   function submitForm() {
+    const id = localStorage.getItem("ID")
     axios
-      .post("http://localhost:5000/api/users", {
-        name: name.value,
-        surname: surname.value,
-        email: email.value,
+      .patch("http://localhost:5000/api/users/me", {
+        _id: id,
         password: password.value,
         location: location.value,
         years_of_experience: years_of_experience.value,
@@ -84,22 +72,22 @@ function SignUp() {
         partner_age: partner_age.value,
         partner_weight: partner_weight.value,
         partner_height: partner_height.value,
-        gender: gender,
         partner_gender: partner_gender,
-        dance_preference: checkedDanceTypes
+        dance_preference: checkedDanceTypes,
       })
-      .then(e => {
-        if (e.data.token) {
+      .then((e) => {
+        console.log(e.data);
+        if (e.status === 200) {
           // user token and ID is stored in local storage in order to use them
-          // when user wants to see matched users in profile page or wants to log out 
-          localStorage.setItem("token", e.data.token);
-          localStorage.setItem("ID", e.data.user._id);
+          // when user wants to see matched users in profile page or wants to log out
+          // localStorage.setItem("token", e.data.token);
+          // localStorage.setItem("ID", e.data.user._id);
           setSignedUp(true);
         } else {
           setSignedUp(false);
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -110,12 +98,12 @@ function SignUp() {
       ) : (
         <div>
           <Button variant="outline-primary" onClick={handleShow}>
-            Sign Up
+            Update
           </Button>
           <Modal show={show} onHide={handleClose}>
             <Modal.Body>
               <form
-                onSubmit={e => {
+                onSubmit={(e) => {
                   e.preventDefault();
                   submitForm();
                 }}
@@ -123,27 +111,15 @@ function SignUp() {
                 method="post"
                 className="was-validated"
               >
-                <Basic_Info
-                  name={name}
-                  surname={surname}
-                  email={email}
-                  password={password}
-                />
+                <Basic_Info password={password} />
                 <Location_Experience
                   location={location}
                   years_of_experience={years_of_experience}
                 />
                 <More_About_You more_about_you={more_about_you} />
-                <User_Physical_Info
-                  handleButtonUser={handleButtonUser}
-                  age={age}
-                  weight={weight}
-                  height={height}
-                />
+                <User_Physical_Info age={age} weight={weight} height={height} />
                 <div className="container">
-                  <h5 className="text-success mt-5">
-                    Your ideal dance partner
-                  </h5>
+                  <h5 className="text-success mt-5">Update Your Preferences</h5>
                   <hr />
                   <div className="container border border-top-0 border-info px-5 py-2">
                     <Partner_Physical_Info
@@ -157,7 +133,7 @@ function SignUp() {
                 </div>
                 <div className="container my-3">
                   <button type="submit" className="btn btn-primary btn-block">
-                    Submit and meet your mathes now
+                    Submit to update your profile
                   </button>
                 </div>
               </form>
@@ -168,4 +144,4 @@ function SignUp() {
     </div>
   );
 }
-export default SignUp;
+export default Update;

@@ -26,7 +26,7 @@ function Login(props) {
   // Bootstrap is used to style the component
   function submitForm() {
     axios
-      .post("https://hyf-class6-dancewithme.herokuapp.com/api/users/login", {
+      .post("http://localhost:5000/api/users/login", {
         email: email.value,
         password: password.value,
       })
@@ -34,6 +34,7 @@ function Login(props) {
         console.log(e);
         if (e.data.token) {
           alert("You have successfully logged in!");
+          console.log(e.data.user._id)
           localStorage.setItem("token", e.data.token);
           localStorage.setItem("ID", e.data.user._id);
           setLoggedIn(true);
