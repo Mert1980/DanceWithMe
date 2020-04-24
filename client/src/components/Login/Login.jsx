@@ -21,10 +21,14 @@ function Login(props) {
   // set show variable to "true" when user clicks signup button
   const handleShow = () => setShow(true);
 
+  // handle password or username error
+  const [error, setError] = setError(false)
+
   // send post request to backend route handler
   // If successful, this post request saves token and ID into local storage
   // Bootstrap is used to style the component
   function submitForm() {
+    setError(false)
     axios
       .post("https://hyf-class6-dancewithme.herokuapp.com/api/users/login", {
         email: email.value,
@@ -43,8 +47,9 @@ function Login(props) {
         }
       })
       .catch((err) => {
-        alert("Username or password is not correct");
-        console.log(err);
+        setError(true)
+        // alert("Username or password is not correct");
+        // console.log(err);
       });
   }
   return (
@@ -87,7 +92,7 @@ function Login(props) {
                 <Button variant="primary" type="submit">
                   {" "}
                   Submit
-                </Button>
+                </Button> {error && <span>Username or password is not correct!</span>}
               </Form>
             </Modal.Body>
           </Modal>
