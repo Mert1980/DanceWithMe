@@ -40,6 +40,7 @@ function MatchUsers() {
           setUsers(e.data);
           setText("");
         } else {
+          setUsers([])
           setText(
             <div class="alert alert-info alert-dismissible fade show">
               <strong>Sorry!</strong> There are no registered users matching
