@@ -102,7 +102,6 @@ router.patch("/users/me", async (req, res) => {
     updates.forEach((field) => {
       if (req.body[field] !== "" && req.body[field].length !== 0) {
         user[field] = req.body[field];
-        console.log(req.body[field]);
       }
     });
     await user.save();

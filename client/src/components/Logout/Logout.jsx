@@ -26,7 +26,6 @@ function Logout() {
       )
       .then((e) => {
         if (e.status === 200) {
-          alert("You have successfully logged out!");
           setLoggedOut(true);
         } else {
           setLoggedOut(false);
@@ -42,9 +41,6 @@ function Logout() {
           <button type="button" onClick={handleClick} class="btn btn-secondary">
             Logout
           </button>
-          {/*   <Button class="btn btn-secondary" onClick={handleClick}>
-            Logout
-          </Button> */}
         </div>
       )}
     </>
