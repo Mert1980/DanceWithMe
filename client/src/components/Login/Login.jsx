@@ -22,7 +22,7 @@ function Login(props) {
   const handleShow = () => setShow(true);
 
   // handle password or username error
-  const [error, setError] = setError(false)
+  const [error, setError] = useState(false)
 
   // send post request to backend route handler
   // If successful, this post request saves token and ID into local storage
@@ -92,7 +92,7 @@ function Login(props) {
                 <Button variant="primary" type="submit">
                   {" "}
                   Submit
-                </Button> {error && <span>Username or password is not correct!</span>}
+                </Button> {error && <span style={{marginLeft:"50px"}}>  Username or password is not correct!</span>}
               </Form>
             </Modal.Body>
           </Modal>
