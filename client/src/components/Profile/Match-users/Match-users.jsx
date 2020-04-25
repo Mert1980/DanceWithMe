@@ -54,7 +54,7 @@ function MatchUsers() {
   return (
     <>
       <div>
-        <Button onClick={handleClick}>Show Matched Users</Button>
+        <Button onClick={handleClick}>Show Matches</Button>
       </div>
       {clicked && (
         <div>
