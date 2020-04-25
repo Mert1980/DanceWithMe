@@ -22,13 +22,13 @@ function Login(props) {
   const handleShow = () => setShow(true);
 
   // handle password or username error
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
 
   // send post request to backend route handler
   // If successful, this post request saves token and ID into local storage
   // Bootstrap is used to style the component
   function submitForm() {
-    setError(false)
+    setError(false);
     axios
       .post("https://hyf-class6-dancewithme.herokuapp.com/api/users/login", {
         email: email.value,
@@ -37,8 +37,6 @@ function Login(props) {
       .then((e) => {
         console.log(e);
         if (e.data.token) {
-          alert("You have successfully logged in!");
-          console.log(e.data.user._id)
           localStorage.setItem("token", e.data.token);
           localStorage.setItem("ID", e.data.user._id);
           setLoggedIn(true);
@@ -47,15 +45,13 @@ function Login(props) {
         }
       })
       .catch((err) => {
-        setError(true)
-        // alert("Username or password is not correct");
-        // console.log(err);
+        setError(true);
       });
   }
   return (
     <>
       {loggedIn ? (
-        <Redirect to="/users/me" /> // this is the frontend router
+        <Redirect to="/users/me" /> 
       ) : (
         <div>
           <Button variant={props.color} onClick={handleShow}>
@@ -92,7 +88,13 @@ function Login(props) {
                 <Button variant="primary" type="submit">
                   {" "}
                   Submit
-                </Button> {error && <span style={{marginLeft:"50px"}}>  Username or password is not correct!</span>}
+                </Button>{" "}
+                {error && (
+                  <span style={{ marginLeft: "50px" }}>
+                    {" "}
+                    Username or password is not correct!
+                  </span>
+                )}
               </Form>
             </Modal.Body>
           </Modal>
